@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mandor/constants": "workspace:*",
+    "@mandor/designs": "workspace:*",
     "@mandor/locales": "workspace:*",
     "@mandor/preferences": "workspace:*",
     "@mandor/stores": "workspace:*",

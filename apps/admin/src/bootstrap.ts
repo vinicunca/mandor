@@ -4,8 +4,8 @@ import { useTitle } from '@vueuse/core';
 import { createApp, watchEffect } from 'vue';
 import { $t, setupI18n } from '~~/locales';
 import { router } from '~~/router';
-
 import App from './app.vue';
+
 import '@mandor/designs';
 
 export async function bootstrap(namespace: string) {
@@ -18,20 +18,6 @@ export async function bootstrap(namespace: string) {
   await initStores(app, { namespace });
 
   app.use(router);
-
-  // const { VueQueryPlugin } = await import('@tanstack/vue-query');
-  // app.use(VueQueryPlugin, {
-  //   queryClientConfig: {
-  //     defaultOptions: {
-  //       queries: {
-  //         refetchOnWindowFocus: false,
-  //       },
-  //     },
-  //   },
-  // });
-
-  // // Setup ag-grid
-  // ModuleRegistry.registerModules([AllCommunityModule]);
 
   watchEffect(() => {
     // Dynamically modify the title

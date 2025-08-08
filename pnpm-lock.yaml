@@ -290,6 +290,9 @@ importers:
       '@mandor/constants':
         specifier: workspace:*
         version: link:../../packages/constants
+      '@mandor/designs':
+        specifier: workspace:*
+        version: link:../../packages/@core/base/designs
       '@mandor/locales':
         specifier: workspace:*
         version: link:../../packages/locales
@@ -620,7 +623,17 @@ importers:
         specifier: 'catalog:'
         version: 4.5.1(vue@3.5.18(typescript@5.9.2))
 
-  packages/utils: {}
+  packages/utils:
+    dependencies:
+      '@mandor-core/shared':
+        specifier: workspace:*
+        version: link:../@core/base/shared
+      '@mandor-core/typings':
+        specifier: workspace:*
+        version: link:../@core/base/typings
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.18(typescript@5.9.2))
 
   scripts/vsh:
     dependencies:

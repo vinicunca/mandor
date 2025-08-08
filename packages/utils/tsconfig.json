@@ -1,6 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@mandor/tsconfig/library.json",
+  "compilerOptions": {
+    "types": ["@mandor-core/typings/vue-router"]
+  },
   "include": ["src"],
   "exclude": ["node_modules"]
 }

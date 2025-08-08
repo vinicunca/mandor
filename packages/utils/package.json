@@ -7,5 +7,10 @@
       "types": "./src/index.ts",
       "default": "./src/index.ts"
     }
+  },
+  "dependencies": {
+    "@mandor-core/shared": "workspace:*",
+    "@mandor-core/typings": "workspace:*",
+    "vue-router": "catalog:"
   }
 }

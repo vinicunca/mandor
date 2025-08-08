@@ -1,11 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router';
-import { LOGIN_PATH, LOGIN_ROUTE_NAME } from '@mandor/constants';
-
 import { preferences } from '@mandor/preferences';
-import { $t } from '~~/locales';
 
 const LayoutCore = () => import('~~/layouts/core.vue');
-const LayoutAuth = () => import('~~/layouts/auth.vue');
 
 /** Global not found page */
 export const fallbackNotFoundRoute: RouteRecordRaw = {
@@ -42,26 +38,5 @@ export const coreRoutes: Array<RouteRecordRaw> = [
     path: '/',
     redirect: preferences.app.defaultHomePath,
     children: [],
-  },
-
-  {
-    component: LayoutAuth,
-    meta: {
-      hideInTab: true,
-      title: 'Authentication',
-    },
-    name: 'Authentication',
-    path: '/auth',
-    redirect: LOGIN_PATH,
-    children: [
-      {
-        name: LOGIN_ROUTE_NAME,
-        path: 'login',
-        component: () => import('~~/pages/_core/auth/page-login.vue'),
-        meta: {
-          title: $t('pages.auth.login'),
-        },
-      },
-    ],
   },
 ];
