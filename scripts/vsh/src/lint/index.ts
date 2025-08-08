@@ -11,7 +11,7 @@ interface LintCommandOptions {
 
 async function runLint({ format }: LintCommandOptions) {
   if (format) {
-    await execaCommand('stylelint "**/*.{vue,css,less,scss}" --cache --fix', {
+    await execaCommand('stylelint "**/*.{vue,css}" --cache --fix', {
       stdio: 'inherit',
     });
     await execaCommand('eslint . --cache --fix', {
@@ -23,7 +23,7 @@ async function runLint({ format }: LintCommandOptions) {
     execaCommand('eslint . --cache', {
       stdio: 'inherit',
     }),
-    execaCommand('stylelint "**/*.{vue,css,less,scss}" --cache', {
+    execaCommand('stylelint "**/*.{vue,css}" --cache', {
       stdio: 'inherit',
     }),
   ]);
