@@ -33,9 +33,15 @@
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "catalog:",
+    "@changesets/cli": "catalog:",
     "@mandor/eslint-config": "workspace:*",
     "@mandor/tsconfig": "workspace:*",
+    "@mandor/vsh": "workspace:*",
     "@types/node": "catalog:",
+    "cross-env": "catalog:",
+    "cspell": "catalog:",
+    "turbo": "catalog:",
     "unbuild": "catalog:",
     "vitest": "catalog:"
   }
