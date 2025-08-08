@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "antfu.goto-alias",
+    "lokalise.i18n-ally",
+    "yoavbls.pretty-ts-errors",
+    "antfu.unocss",
+    "vue.volar",
+    "praburangki.nuxt-snippets"
+  ]
+}

@@ -1,0 +1,9 @@
+packages:
+  - internal/*
+  - internal/lint-configs/*
+catalog:
+  '@types/node': ^22.16.0
+  '@vinicunca/eslint-config': ^3.21.0
+  eslint: ^9.32.0
+  eslint-plugin-format: ^1.0.1
+  unbuild: ^3.5.0
