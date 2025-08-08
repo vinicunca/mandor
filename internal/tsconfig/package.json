@@ -1,13 +1,17 @@
 {
   "name": "@mandor/tsconfig",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "files": [
     "base.json",
     "library.json",
     "node.json",
     "web-app.json",
     "web.json"
-  ]
+  ],
+  "dependencies": {
+    "@mandor/typings": "workspace:*",
+    "vite": "catalog:"
+  }
 }

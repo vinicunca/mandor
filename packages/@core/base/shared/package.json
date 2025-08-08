@@ -1,0 +1,50 @@
+{
+  "name": "@mandor-core/shared",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    "./utils": {
+      "types": "./src/utils/index.ts",
+      "development": "./src/utils/index.ts",
+      "default": "./dist/utils/index.mjs"
+    },
+    "./color": {
+      "types": "./src/color/index.ts",
+      "development": "./src/color/index.ts",
+      "default": "./dist/color/index.mjs"
+    },
+    "./cache": {
+      "types": "./src/cache/index.ts",
+      "development": "./src/cache/index.ts",
+      "default": "./dist/cache/index.mjs"
+    },
+    "./store": {
+      "types": "./src/store.ts",
+      "development": "./src/store.ts",
+      "default": "./dist/store.mjs"
+    },
+    "./global-state": {
+      "types": "./src/global-state.ts",
+      "development": "./src/global-state.ts",
+      "default": "./dist/global-state.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm unbuild",
+    "stub": "pnpm unbuild --stub"
+  },
+  "dependencies": {
+    "@ctrl/tinycolor": "catalog:",
+    "@tanstack/vue-store": "catalog:",
+    "@vinicunca/perkakas": "catalog:",
+    "defu": "catalog:",
+    "nprogress": "catalog:",
+    "theme-colors": "catalog:"
+  },
+  "devDependencies": {
+    "@types/nprogress": "catalog:"
+  }
+}

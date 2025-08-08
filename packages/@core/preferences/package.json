@@ -1,0 +1,25 @@
+{
+  "name": "@mandor-core/preferences",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./src/index.ts",
+      "#default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "@mandor-core/shared": "workspace:*",
+    "@mandor-core/typings": "workspace:*",
+    "@mandor/locales": "workspace:*",
+    "@vinicunca/perkakas": "catalog:",
+    "@vueuse/core": "catalog:",
+    "vue": "catalog:"
+  }
+}

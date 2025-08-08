@@ -1,0 +1,56 @@
+html {
+  @apply antialiased color-foreground bg-background font-sans text-[100%];
+
+  font-variation-settings: normal;
+  line-height: 1.15;
+  text-size-adjust: 100%;
+  font-synthesis-weight: none;
+  scroll-behavior: smooth;
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app,
+body,
+html {
+  @apply size-full;
+}
+
+body {
+  @apply min-h-screen;
+}
+
+::view-transition-new(root),
+::view-transition-old(root) {
+  @apply animate-none mix-blend-normal;
+}
+
+::view-transition-old(root) {
+  @apply z-1;
+}
+
+::view-transition-new(root) {
+  @apply z-2147483646;
+}
+
+html.dark::view-transition-old(root) {
+  @apply z-2147483646;
+}
+
+html.dark::view-transition-new(root) {
+  @apply z-1;
+}
+
+@keyframes enter-x-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enter-y-animation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

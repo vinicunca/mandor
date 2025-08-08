@@ -1,0 +1,26 @@
+{
+  "name": "@mandor/unocss-config",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./postcss": {
+      "types": "./src/postcss.config.ts",
+      "import": "./dist/postcss.config.mjs",
+      "require": "./dist/postcss.config.cjs",
+      "default": "./dist/postcss.config.mjs"
+    }
+  },
+  "scripts": {
+    "stub": "pnpm unbuild --stub"
+  },
+  "dependencies": {
+    "postcss-preset-env": "catalog:"
+  },
+  "devDependencies": {
+    "@vinicunca/unocss-preset": "catalog:",
+    "unocss": "catalog:"
+  }
+}

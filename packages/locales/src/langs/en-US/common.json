@@ -1,0 +1,10 @@
+{
+  "login": "Login",
+  "logout": "Logout",
+  "logoutConfirmation": "Are you sure you want to logout?",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "somethingWentWrong": "Something went wrong",
+  "backToHome": "Back To Home",
+  "refresh": "Refresh"
+}

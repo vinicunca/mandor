@@ -1,0 +1,22 @@
+{
+  "name": "@mandor/admin",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "pnpm vite build --mode production",
+    "build:analyze": "pnpm vite build --mode analyze",
+    "dev": "pnpm vite --mode development"
+  },
+  "dependencies": {
+    "@mandor/constants": "workspace:*",
+    "@mandor/locales": "workspace:*",
+    "@mandor/preferences": "workspace:*",
+    "@mandor/stores": "workspace:*",
+    "@mandor/typings": "workspace:*",
+    "@mandor/utils": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "pinia": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  }
+}

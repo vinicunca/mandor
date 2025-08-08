@@ -1,0 +1,16 @@
+{
+  "welcomeBack": "Welcome Back",
+  "loginSuccess": "Login Successful",
+  "pageTitle": "Plug-and-play Admin system",
+  "pageDesc": "Efficient, versatile frontend template",
+  "loginSubtitle": "Enter your account details to manage your projects",
+  "email": "Email",
+  "password": "Password",
+  "emailTip": "Please enter email",
+  "emailInvalid": "Email is invalid",
+  "passwordErrorTip": "Password is incorrect",
+  "passwordTip": "Please enter password",
+  "hidePassword": "Hide Password",
+  "showPassword": "Show Password",
+  "userInfoNotFound": "User information not found"
+}

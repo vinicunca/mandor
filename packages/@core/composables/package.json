@@ -1,0 +1,27 @@
+{
+  "name": "@mandor-core/composables",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "development": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "pnpm unbuild"
+  },
+  "dependencies": {
+    "@mandor-core/shared": "workspace:*",
+    "@mandor/constants": "workspace:*",
+    "@vinicunca/perkakas": "catalog:",
+    "@vueuse/core": "catalog:",
+    "akar": "catalog:",
+    "sortablejs": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@types/sortablejs": "catalog:"
+  }
+}
