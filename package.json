@@ -36,6 +36,7 @@
     "@mandor/eslint-config": "workspace:*",
     "@mandor/tsconfig": "workspace:*",
     "@types/node": "catalog:",
-    "unbuild": "catalog:"
+    "unbuild": "catalog:",
+    "vitest": "catalog:"
   }
 }

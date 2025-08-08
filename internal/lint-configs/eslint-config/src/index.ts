@@ -1,18 +1,25 @@
 import { vinicuncaESLint } from '@vinicunca/eslint-config';
-import { customConfig } from './custom-config';
 
 export async function defineConfig() {
-return vinicuncaESLint(
-  {
-    typescript: true,
-    unocss: true,
-    vue: true,
-    pnpm: true,
-    formatters: {
-      css: true,
-      html: true,
-    }
-  },
-customConfig,
-)
+  return vinicuncaESLint(
+    {
+      typescript: true,
+      unocss: true,
+      vue: true,
+      pnpm: true,
+      formatters: {
+        css: true,
+        html: true,
+      },
+    },
+
+    {
+      files: ['internal/**/**', 'scripts/**/**'],
+      rules: {
+        'no-console': 'off',
+        'node/prefer-global/process': 'off',
+        'sonar/hashing': 'off',
+      },
+    },
+  );
 }
