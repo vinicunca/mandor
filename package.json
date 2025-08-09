@@ -35,9 +35,13 @@
   "devDependencies": {
     "@changesets/changelog-github": "catalog:",
     "@changesets/cli": "catalog:",
+    "@iconify/json": "catalog:",
     "@mandor/eslint-config": "workspace:*",
+    "@mandor/stylelint-config": "workspace:*",
     "@mandor/tsconfig": "workspace:*",
+    "@mandor/turbo-run": "workspace:*",
     "@mandor/unocss-config": "workspace:*",
+    "@mandor/vite-config": "workspace:*",
     "@mandor/vsh": "workspace:*",
     "@types/node": "catalog:",
     "cross-env": "catalog:",

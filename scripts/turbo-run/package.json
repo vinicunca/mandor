@@ -1,0 +1,27 @@
+{
+  "name": "@mandor/turbo-run",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "bin": {
+    "turbo-run": "./bin/turbo-run.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "stub": "pnpm unbuild --stub"
+  },
+  "dependencies": {
+    "@clack/prompts": "catalog:",
+    "@mandor/node-utils": "workspace:*",
+    "cac": "catalog:"
+  }
+}

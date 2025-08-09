@@ -1,1 +1,1 @@
-export { default } from '@@mandor/unocss-config/postcss';
+export { default } from '@mandor/unocss-config/postcss';

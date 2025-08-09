@@ -1,11 +1,11 @@
-import { resetStaticRoutes } from '@mandor/utils';
-
 import {
   createRouter,
   createWebHashHistory,
   createWebHistory,
 } from 'vue-router';
-import { createRouterGuard } from './core.guard';
+
+import { resetStaticRoutes } from '@mandor/utils';
+
 import { routes } from './routes';
 
 export const router = createRouter({
@@ -28,5 +28,3 @@ export const router = createRouter({
 });
 
 export const resetRoutes = () => resetStaticRoutes({ router, routes });
-
-createRouterGuard(router);

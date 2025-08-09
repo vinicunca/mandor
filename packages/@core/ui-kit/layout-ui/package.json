@@ -1,0 +1,22 @@
+{
+  "name": "@mandor-core/layout-ui",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts",
+      "development": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@mandor-core/akar-ui": "workspace:*",
+    "@mandor-core/composables": "workspace:*",
+    "@mandor-core/icons": "workspace:*",
+    "@mandor-core/shared": "workspace:*",
+    "@mandor-core/typings": "workspace:*",
+    "@mandor/constants": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "vue": "catalog:"
+  }
+}

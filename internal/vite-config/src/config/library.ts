@@ -2,7 +2,7 @@ import type { ConfigEnv, UserConfig } from 'vite';
 
 import type { DefineLibraryOptions } from '../typings';
 
-import { readPackageJSON } from '@vben/node-utils';
+import { readPackageJSON } from '@mandor/node-utils';
 
 import { defineConfig, mergeConfig } from 'vite';
 
@@ -25,8 +25,7 @@ function defineLibraryConfig(userConfigPromise?: DefineLibraryOptions) {
       ...library,
     });
 
-    const { dependencies = {}, peerDependencies = {} } =
-      await readPackageJSON(root);
+    const { dependencies = {}, peerDependencies = {} } = await readPackageJSON(root);
 
     const externalPackages = [
       ...Object.keys(dependencies),

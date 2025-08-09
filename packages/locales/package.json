@@ -7,5 +7,9 @@
       "types": "./src/index.ts",
       "default": "./src/index.ts"
     }
+  },
+  "dependencies": {
+    "vue": "catalog:",
+    "vue-i18n": "catalog:"
   }
 }
