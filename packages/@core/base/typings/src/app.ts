@@ -1,4 +1,4 @@
-type LayoutType
+export type LayoutType
   = | 'full-content'
     | 'header-mixed-nav'
     | 'header-nav'
@@ -7,7 +7,7 @@ type LayoutType
     | 'sidebar-mixed-nav'
     | 'sidebar-nav';
 
-type ThemeModeType = 'auto' | 'dark' | 'light';
+export type ThemeModeType = 'auto' | 'dark' | 'light';
 
 /**
  * Preferences button position
@@ -15,9 +15,9 @@ type ThemeModeType = 'auto' | 'dark' | 'light';
  * header: Top bar
  * auto: Automatic
  */
-type PreferencesButtonPositionType = 'auto' | 'fixed' | 'header';
+export type PreferencesButtonPositionType = 'auto' | 'fixed' | 'header';
 
-type BuiltinThemeType
+export type BuiltinThemeType
   = | 'custom'
     | 'deep-blue'
     | 'deep-green'
@@ -37,38 +37,38 @@ type BuiltinThemeType
     | 'zinc'
     | (Record<never, never> & string);
 
-type ContentCompactType = 'compact' | 'wide';
+export type ContentCompactType = 'compact' | 'wide';
 
-type LayoutHeaderModeType = 'auto' | 'auto-scroll' | 'fixed' | 'static';
-type LayoutHeaderMenuAlignType = 'center' | 'end' | 'start';
+export type LayoutHeaderModeType = 'auto' | 'auto-scroll' | 'fixed' | 'static';
+export type LayoutHeaderMenuAlignType = 'center' | 'end' | 'start';
 
 /**
  * Login expired mode
  * modal: Modal mode
  * page: Page mode
  */
-type LoginExpiredModeType = 'modal' | 'page';
+export type LoginExpiredModeType = 'modal' | 'page';
 
 /**
  * Breadcrumb style
  * background: Background
  * normal: Default
  */
-type BreadcrumbStyleType = 'background' | 'normal';
+export type BreadcrumbStyleType = 'background' | 'normal';
 
 /**
  * Access mode
  * backend: Backend access mode
  * frontend: Frontend access mode
  */
-type AccessModeType = 'backend' | 'frontend' | 'mixed';
+export type AccessModeType = 'backend' | 'frontend' | 'mixed';
 
 /**
  * Navigation style
  * plain: Plain
  * rounded: Rounded
  */
-type NavigationStyleType = 'plain' | 'rounded';
+export type NavigationStyleType = 'plain' | 'rounded';
 
 /**
  * Tabs style
@@ -77,12 +77,12 @@ type NavigationStyleType = 'plain' | 'rounded';
  * chrome: Chrome
  * plain: Plain
  */
-type TabsStyleType = 'brisk' | 'card' | 'chrome' | 'plain';
+export type TabsStyleType = 'brisk' | 'card' | 'chrome' | 'plain';
 
 /**
  * Page transition animation
  */
-type PageTransitionType = 'fade' | 'fade-down' | 'fade-slide' | 'fade-up';
+export type PageTransitionType = 'fade' | 'fade-down' | 'fade-slide' | 'fade-up';
 
 /**
  * Authentication page layout
@@ -90,21 +90,4 @@ type PageTransitionType = 'fade' | 'fade-down' | 'fade-slide' | 'fade-up';
  * panel-left: Left-aligned layout
  * panel-right: Right-aligned layout
  */
-type AuthPageLayoutType = 'panel-center' | 'panel-left' | 'panel-right';
-
-export type {
-  AccessModeType,
-  AuthPageLayoutType,
-  BreadcrumbStyleType,
-  BuiltinThemeType,
-  ContentCompactType,
-  LayoutHeaderMenuAlignType,
-  LayoutHeaderModeType,
-  LayoutType,
-  LoginExpiredModeType,
-  NavigationStyleType,
-  PageTransitionType,
-  PreferencesButtonPositionType,
-  TabsStyleType,
-  ThemeModeType,
-};
+export type AuthPageLayoutType = 'panel-center' | 'panel-left' | 'panel-right';

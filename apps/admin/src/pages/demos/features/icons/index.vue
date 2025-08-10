@@ -17,7 +17,6 @@ import {
   SvgCardIcon,
   SvgDownloadIcon,
 } from '@vben/icons';
-
 import { Card, Input } from 'ant-design-vue';
 
 const iconValue1 = ref('ant-design:trademark-outlined');
@@ -44,21 +43,27 @@ const inputComponent = h(Input);
       </div>
     </template>
 
-    <Card class="mb-5" title="Iconify">
-      <div class="flex items-center gap-5">
+    <Card
+      class="mb-5"
+      title="Iconify"
+    >
+      <div class="flex gap-5 items-center">
         <MdiGithub class="size-8" />
-        <MdiGoogle class="size-8 text-red-500" />
-        <MdiQqchat class="size-8 text-green-500" />
+        <MdiGoogle class="text-red-500 size-8" />
+        <MdiQqchat class="text-green-500 size-8" />
         <MdiWechat class="size-8" />
         <MdiKeyboardEsc class="size-8" />
       </div>
     </Card>
 
-    <Card class="mb-5" title="Svg Icons">
-      <div class="flex items-center gap-5">
+    <Card
+      class="mb-5"
+      title="Svg Icons"
+    >
+      <div class="flex gap-5 items-center">
         <SvgAvatar1Icon class="size-8" />
-        <SvgAvatar2Icon class="size-8 text-red-500" />
-        <SvgAvatar3Icon class="size-8 text-green-500" />
+        <SvgAvatar2Icon class="text-red-500 size-8" />
+        <SvgAvatar3Icon class="text-green-500 size-8" />
         <SvgAvatar4Icon class="size-8" />
         <SvgCakeIcon class="size-8" />
         <SvgBellIcon class="size-8" />
@@ -67,37 +72,50 @@ const inputComponent = h(Input);
       </div>
     </Card>
 
-    <Card class="mb-5" title="Tailwind CSS">
-      <div class="flex items-center gap-5 text-3xl">
-        <span class="icon-[ant-design--alipay-circle-outlined]"></span>
-        <span class="icon-[ant-design--account-book-filled]"></span>
-        <span class="icon-[ant-design--container-outlined]"></span>
-        <span class="icon-[svg-spinners--wind-toy]"></span>
-        <span class="icon-[svg-spinners--blocks-wave]"></span>
-        <span class="icon-[line-md--compass-filled-loop]"></span>
+    <Card
+      class="mb-5"
+      title="Tailwind CSS"
+    >
+      <div class="text-3xl flex gap-5 items-center">
+        <span class="icon-[ant-design--alipay-circle-outlined]" />
+        <span class="icon-[ant-design--account-book-filled]" />
+        <span class="icon-[ant-design--container-outlined]" />
+        <span class="icon-[svg-spinners--wind-toy]" />
+        <span class="icon-[svg-spinners--blocks-wave]" />
+        <span class="icon-[line-md--compass-filled-loop]" />
       </div>
     </Card>
 
-    <Card class="mb-5" title="图标选择器">
-      <div class="mb-5 flex items-center gap-5">
+    <Card
+      class="mb-5"
+      title="图标选择器"
+    >
+      <div class="mb-5 flex gap-5 items-center">
         <span>原始样式(Iconify):</span>
-        <IconPicker v-model="iconValue1" class="w-[200px]" />
+        <IconPicker
+          v-model="iconValue1"
+          class="w-[200px]"
+        />
       </div>
-      <div class="mb-5 flex items-center gap-5">
+      <div class="mb-5 flex gap-5 items-center">
         <span>原始样式(svg):</span>
-        <IconPicker v-model="iconValue2" class="w-[200px]" prefix="svg" />
+        <IconPicker
+          v-model="iconValue2"
+          class="w-[200px]"
+          prefix="svg"
+        />
       </div>
-      <div class="mb-5 flex items-center gap-5">
+      <div class="mb-5 flex gap-5 items-center">
         <span>自定义Input:</span>
         <IconPicker
-          :input-component="inputComponent"
           v-model="iconValue3"
+          :input-component="inputComponent"
           icon-slot="addonAfter"
           model-value-prop="value"
           prefix="mdi"
         />
       </div>
-      <div class="flex items-center gap-5">
+      <div class="flex gap-5 items-center">
         <span>显示为一个Icon:</span>
         <Input
           v-model:value="iconValue4"
@@ -106,7 +124,11 @@ const inputComponent = h(Input);
           style="width: 300px"
         >
           <template #addonAfter>
-            <IconPicker v-model="iconValue4" prefix="mdi-light" type="icon" />
+            <IconPicker
+              v-model="iconValue4"
+              prefix="mdi-light"
+              type="icon"
+            />
           </template>
         </Input>
       </div>

@@ -2,10 +2,9 @@
 import { ref } from 'vue';
 
 import { useVbenDrawer } from '@vben/common-ui';
-
 import { Button, message } from 'ant-design-vue';
 
-const list = ref<number[]>([]);
+const list = ref<Array<number>>([]);
 
 const [Drawer, drawerApi] = useVbenDrawer({
   onCancel() {
@@ -30,6 +29,7 @@ function handleUpdate(len: number) {
   }, 2000);
 }
 </script>
+
 <template>
   <Drawer title="自动计算高度">
     <div
@@ -41,7 +41,12 @@ function handleUpdate(len: number) {
     </div>
 
     <template #prepend-footer>
-      <Button type="link" @click="handleUpdate(6)">点击更新数据</Button>
+      <Button
+        type="link"
+        @click="handleUpdate(6)"
+      >
+        点击更新数据
+      </Button>
     </template>
   </Drawer>
 </template>

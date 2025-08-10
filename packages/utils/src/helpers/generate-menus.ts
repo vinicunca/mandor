@@ -1,6 +1,7 @@
+import type { Router, RouteRecordRaw } from 'vue-router';
+
 import type { ExtendedRouteRecordRaw, MenuRecordRaw, RouteMeta } from '@mandor/typings';
 
-import type { Router, RouteRecordRaw } from 'vue-router';
 import { filterTree, mapTree } from '@mandor-core/shared/utils';
 
 /**

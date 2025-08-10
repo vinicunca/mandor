@@ -1,6 +1,6 @@
-import { getDiff } from '@mandor-core/shared/utils';
-
 import { computed } from 'vue';
+
+import { getDiff } from '@mandor-core/shared/utils';
 
 import { isDarkTheme } from './css.preference';
 import { preferencesManager } from './manager.preference';

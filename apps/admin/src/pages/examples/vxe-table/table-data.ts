@@ -9,8 +9,8 @@ interface TableRowData {
 
 const roles = ['User', 'Admin', 'Manager', 'Guest'];
 
-export const MOCK_TABLE_DATA: TableRowData[] = (() => {
-  const data: TableRowData[] = [];
+export const MOCK_TABLE_DATA: Array<TableRowData> = (() => {
+  const data: Array<TableRowData> = [];
   for (let i = 0; i < 40; i++) {
     data.push({
       address: `New York${i}`,

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
+
 import { computed } from 'vue';
 
 interface Props {
@@ -36,7 +37,7 @@ const style = computed<CSSProperties>(() => {
 <template>
   <footer
     :style="style"
-    class="bottom-0 w-full bg-background-deep transition-all-200"
+    class="bg-background-deep w-full transition-all-200 bottom-0"
   >
     <slot />
   </footer>

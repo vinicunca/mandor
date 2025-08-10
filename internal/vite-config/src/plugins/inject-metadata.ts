@@ -1,10 +1,12 @@
 import type { PluginOption } from 'vite';
+
 import {
   dateUtil,
   findMonorepoRoot,
   getPackages,
   readPackageJSON,
 } from '@mandor/node-utils';
+
 import { readWorkspaceManifest } from '@pnpm/workspace.read-manifest';
 
 function resolvePackageVersion(

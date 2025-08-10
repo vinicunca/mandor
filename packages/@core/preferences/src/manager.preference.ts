@@ -1,15 +1,17 @@
 import type { DeepPartial } from '@vinicunca/perkakas';
 
 import type { InitialOptions, Preferences } from './entity.preference';
-import { StorageManager } from '@mandor-core/shared/cache';
 
+import { markRaw, reactive, readonly, watch } from 'vue';
+
+import { StorageManager } from '@mandor-core/shared/cache';
 import { defu, isMacOs } from '@mandor-core/shared/utils';
+
 import {
   breakpointsTailwind,
   useBreakpoints,
   useDebounceFn,
 } from '@vueuse/core';
-import { markRaw, reactive, readonly, watch } from 'vue';
 
 import { updateCssVariables } from './css.preference';
 import { defaultPreferences } from './default-config.preference';

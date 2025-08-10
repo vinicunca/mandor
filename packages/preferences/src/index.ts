@@ -1,5 +1,6 @@
-import type { Preferences } from '@mandor-core/preferences';
 import type { DeepPartial } from '@vinicunca/perkakas';
+
+import type { Preferences } from '@mandor-core/preferences';
 
 /**
  * If we want all apps to use the same default preferences,

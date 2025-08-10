@@ -1,7 +1,10 @@
 import type { ApplicationPluginOptions } from '../typings';
+
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+
 import { fs } from '@mandor/node-utils';
+
 import dotenv from 'dotenv';
 
 const getBoolean = (value: string | undefined) => value === 'true';

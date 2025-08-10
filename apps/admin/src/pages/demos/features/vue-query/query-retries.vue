@@ -21,14 +21,24 @@ const { error, isFetching, refetch } = useQuery({
   retry: 3, // Will retry failed requests 3 times before displaying an error
 });
 
-const onClick = async () => {
+async function onClick() {
   count.value = -1;
   await refetch();
-};
+}
 </script>
 
 <template>
-  <Button :loading="isFetching" @click="onClick"> 发起错误重试 </Button>
-  <p v-if="count > 0" class="my-3">重试次数{{ count }}</p>
+  <Button
+    :loading="isFetching"
+    @click="onClick"
+  >
+    发起错误重试
+  </Button>
+  <p
+    v-if="count > 0"
+    class="my-3"
+  >
+    重试次数{{ count }}
+  </p>
   <p>{{ error }}</p>
 </template>

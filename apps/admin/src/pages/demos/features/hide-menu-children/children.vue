@@ -14,7 +14,10 @@ const { closeCurrentTab } = useTabs();
     show-back
   >
     <template #action>
-      <VbenButton size="lg" @click="closeCurrentTab()">
+      <VbenButton
+        size="lg"
+        @click="closeCurrentTab()"
+      >
         <X class="mr-2 size-4" />
         关闭当前标签页
       </VbenButton>

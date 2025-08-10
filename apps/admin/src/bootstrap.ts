@@ -1,12 +1,15 @@
-import { preferences } from '@mandor/preferences';
-import { initStores } from '@mandor/stores';
-import { useTitle } from '@vueuse/core';
 import { createApp, watchEffect } from 'vue';
-import { $t, setupI18n } from '~~/locales';
-import { router } from '~~/router';
-import App from './app.vue';
 
 import '@mandor/designs';
+import { preferences } from '@mandor/preferences';
+import { initStores } from '@mandor/stores';
+
+import { useTitle } from '@vueuse/core';
+
+import { $t, setupI18n } from '~~/locales';
+import { router } from '~~/router';
+
+import App from './app.vue';
 
 export async function bootstrap(namespace: string) {
   const app = createApp(App);

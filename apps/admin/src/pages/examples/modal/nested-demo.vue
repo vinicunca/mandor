@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useVbenModal } from '@vben/common-ui';
-
 import { Button } from 'ant-design-vue';
 
 import DragDemo from './drag-demo.vue';
@@ -16,9 +15,15 @@ function openNestedModal() {
   baseModalApi.open();
 }
 </script>
+
 <template>
   <Modal title="嵌套弹窗示例">
-    <Button @click="openNestedModal" type="primary">打开子弹窗</Button>
+    <Button
+      type="primary"
+      @click="openNestedModal"
+    >
+      打开子弹窗
+    </Button>
     <BaseModal />
   </Modal>
 </template>

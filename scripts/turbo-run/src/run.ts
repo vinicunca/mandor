@@ -1,6 +1,6 @@
-import { cancel, isCancel, select } from '@clack/prompts';
-
 import { execaCommand, getPackages } from '@mandor/node-utils';
+
+import { cancel, isCancel, select } from '@clack/prompts';
 
 interface RunOptions {
   command?: string;

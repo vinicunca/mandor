@@ -2,7 +2,6 @@
 import type { VxeGridProps } from '~~/adapter/vxe-table';
 
 import { Page } from '@vben/common-ui';
-
 import { Button, message } from 'ant-design-vue';
 
 import { useVbenVxeGrid } from '~~/adapter/vxe-table';
@@ -72,9 +71,9 @@ async function saveRowEvent(row: RowType) {
   }, 600);
 }
 
-const cancelRowEvent = (_row: RowType) => {
+function cancelRowEvent(_row: RowType) {
   gridApi.grid?.clearEdit();
-};
+}
 </script>
 
 <template>
@@ -82,11 +81,26 @@ const cancelRowEvent = (_row: RowType) => {
     <Grid>
       <template #action="{ row }">
         <template v-if="hasEditStatus(row)">
-          <Button type="link" @click="saveRowEvent(row)">保存</Button>
-          <Button type="link" @click="cancelRowEvent(row)">取消</Button>
+          <Button
+            type="link"
+            @click="saveRowEvent(row)"
+          >
+            保存
+          </Button>
+          <Button
+            type="link"
+            @click="cancelRowEvent(row)"
+          >
+            取消
+          </Button>
         </template>
         <template v-else>
-          <Button type="link" @click="editRowEvent(row)">编辑</Button>
+          <Button
+            type="link"
+            @click="editRowEvent(row)"
+          >
+            编辑
+          </Button>
         </template>
       </template>
     </Grid>

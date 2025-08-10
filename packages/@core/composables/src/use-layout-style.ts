@@ -1,6 +1,8 @@
-import type { VisibleDomRect } from '@mandor-core/shared/utils';
 import type { CSSProperties } from 'vue';
-import { getElementVisibleRect } from '@mandor-core/shared/utils';
+
+import type { VisibleDomRect } from '@mandor-core/shared/utils';
+
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 import {
   CSS_VARIABLE_LAYOUT_CONTENT_HEIGHT,
@@ -8,8 +10,10 @@ import {
   CSS_VARIABLE_LAYOUT_FOOTER_HEIGHT,
   CSS_VARIABLE_LAYOUT_HEADER_HEIGHT,
 } from '@mandor/constants';
+
+import { getElementVisibleRect } from '@mandor-core/shared/utils';
+
 import { useCssVar, useDebounceFn } from '@vueuse/core';
-import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 export function useLayoutContentStyle() {
   let resizeObserver: null | ResizeObserver = null;

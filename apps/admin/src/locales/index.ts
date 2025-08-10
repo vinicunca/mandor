@@ -1,5 +1,7 @@
-import type { LocaleSetupOptions, SupportedLanguagesType } from '@mandor/locales';
 import type { App } from 'vue';
+
+import type { LocaleSetupOptions, SupportedLanguagesType } from '@mandor/locales';
+
 import {
   $t,
   setupI18n as coreI18nSetup,

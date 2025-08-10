@@ -1,9 +1,10 @@
-import type { LayoutType } from '@ngibur-core/typings';
+import type { LayoutType } from '@mandor-core/typings';
 
-import type { NgiburLayoutProps } from './ngibur-layout';
+import type { MandorLayoutProps } from './layout.typings';
+
 import { computed } from 'vue';
 
-export function useLayout(props: NgiburLayoutProps) {
+export function useLayout(props: MandorLayoutProps) {
   const currentLayout = computed(() =>
     props.isMobile ? 'sidebar-nav' : (props.layout as LayoutType),
   );

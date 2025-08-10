@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+
 import { presetVinicunca } from '@vinicunca/unocss-preset';
 import { defineConfig } from 'unocss';
+
 import { presetCore } from './presets/preset.core';
 
 const mainConfigPath = path.join(__dirname, './index.ts');
@@ -22,6 +24,7 @@ export const unoCssConfig = defineConfig({
   configDeps,
 
   layers: {
+    akar: 10,
     mandor: 20,
     brand: 30,
   },

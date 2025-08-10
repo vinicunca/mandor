@@ -13,7 +13,7 @@ import { SvgAntdvLogoIcon } from '@vben/icons';
 import { IFrameView } from '~~/layouts';
 import { $t } from '~~/locales';
 
-const routes: RouteRecordRaw[] = [
+const routes: Array<RouteRecordRaw> = [
   {
     meta: {
       badgeType: 'dot',

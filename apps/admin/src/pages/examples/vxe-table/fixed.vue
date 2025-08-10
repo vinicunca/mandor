@@ -2,7 +2,6 @@
 import type { VxeGridProps } from '~~/adapter/vxe-table';
 
 import { Page } from '@vben/common-ui';
-
 import { Button } from 'ant-design-vue';
 
 import { useVbenVxeGrid } from '~~/adapter/vxe-table';
@@ -62,7 +61,9 @@ const [Grid] = useVbenVxeGrid({ gridOptions });
   <Page auto-content-height>
     <Grid>
       <template #action>
-        <Button type="link">编辑</Button>
+        <Button type="link">
+          编辑
+        </Button>
       </template>
     </Grid>
   </Page>

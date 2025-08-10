@@ -11,7 +11,7 @@ import { $t } from '~~/locales';
 /**
  * 获取编辑表单的字段配置。如果没有使用多语言，可以直接export一个数组常量
  */
-export function useSchema(): VbenFormSchema[] {
+export function useSchema(): Array<VbenFormSchema> {
   return [
     {
       component: 'Input',

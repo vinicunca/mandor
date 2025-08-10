@@ -36,9 +36,9 @@ const gridOptions: VxeGridProps<RowType> = {
 const [Grid, gridApi] = useVbenVxeGrid({ gridOptions });
 
 // 模拟行数据
-const loadList = (size = 200) => {
+function loadList(size = 200) {
   try {
-    const dataList: RowType[] = [];
+    const dataList: Array<RowType> = [];
     for (let i = 0; i < size; i++) {
       dataList.push({
         id: 10_000 + i,
@@ -52,7 +52,7 @@ const loadList = (size = 200) => {
     console.error('Failed to load data:', error);
     // Implement user-friendly error handling
   }
-};
+}
 
 onMounted(() => {
   loadList(1000);

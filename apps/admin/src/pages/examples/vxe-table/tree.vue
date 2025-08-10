@@ -2,7 +2,6 @@
 import type { VxeGridProps } from '~~/adapter/vxe-table';
 
 import { Page } from '@vben/common-ui';
-
 import { Button } from 'ant-design-vue';
 
 import { useVbenVxeGrid } from '~~/adapter/vxe-table';
@@ -39,23 +38,35 @@ const gridOptions: VxeGridProps<RowType> = {
 
 const [Grid, gridApi] = useVbenVxeGrid({ gridOptions });
 
-const expandAll = () => {
+function expandAll() {
   gridApi.grid?.setAllTreeExpand(true);
-};
+}
 
-const collapseAll = () => {
+function collapseAll() {
   gridApi.grid?.setAllTreeExpand(false);
-};
+}
 </script>
 
 <template>
   <Page>
-    <Grid table-title="数据列表" table-title-help="提示">
+    <Grid
+      table-title="数据列表"
+      table-title-help="提示"
+    >
       <template #toolbar-tools>
-        <Button class="mr-2" type="primary" @click="expandAll">
+        <Button
+          class="mr-2"
+          type="primary"
+          @click="expandAll"
+        >
           展开全部
         </Button>
-        <Button type="primary" @click="collapseAll"> 折叠全部 </Button>
+        <Button
+          type="primary"
+          @click="collapseAll"
+        >
+          折叠全部
+        </Button>
       </template>
     </Grid>
   </Page>

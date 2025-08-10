@@ -1,5 +1,7 @@
 import { colors, consola } from '@mandor/node-utils';
+
 import { cac } from 'cac';
+
 import { run } from './run';
 
 try {

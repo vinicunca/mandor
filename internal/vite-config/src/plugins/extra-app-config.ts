@@ -1,9 +1,11 @@
 import type { PluginOption } from 'vite';
+
 import {
   colors,
   generatorContentHash,
   readPackageJSON,
 } from '@mandor/node-utils';
+
 import { loadEnv } from '../utils/env';
 
 interface PluginOptions {

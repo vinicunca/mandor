@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from 'vue-router';
 import { IFrameView } from '~~/layouts';
 import { $t } from '~~/locales';
 
-const routes: RouteRecordRaw[] = [
+const routes: Array<RouteRecordRaw> = [
   {
     meta: {
       icon: 'ic:baseline-view-in-ar',

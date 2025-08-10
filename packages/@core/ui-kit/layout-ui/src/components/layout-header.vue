@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
+
 import { computed, useSlots } from 'vue';
 
 interface Props {
@@ -66,7 +67,7 @@ const logoStyle = computed<CSSProperties>(() => {
   <header
     :class="theme"
     :style="style"
-    class="top-0 w-full flex flex-[0_0_auto] items-center border-b bg-header pl-2 transition-margin-200"
+    class="pl-2 border-b bg-header flex flex-[0_0_auto] w-full transition-margin-200 items-center top-0"
   >
     <div
       v-if="slots.logo"

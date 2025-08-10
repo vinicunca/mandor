@@ -8,7 +8,7 @@ function toggleFixed() {
 
 <template>
   <div
-    class="absolute bottom-2 right-3 z-10 flex-center cursor-pointer rounded-sm bg-accent p-[5px] color-foreground/60 transition-all-300 hover:bg-accent-hover hover:color-foreground"
+    class="color-foreground/60 p-[5px] rounded-sm bg-accent flex-center cursor-pointer transition-all-300 bottom-2 right-3 absolute z-10 hover:color-foreground hover:bg-accent-hover"
     @click="toggleFixed"
   >
     <i

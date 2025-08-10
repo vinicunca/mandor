@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue';
-import { PScrollbar } from '@ngibur/pohon-ui';
-import { useScrollLock } from '@vueuse/core';
 
 import { computed, shallowRef, useSlots, watchEffect } from 'vue';
+
+import { AuScrollbar } from '@mandor-core/akar-ui';
+
+import { useScrollLock } from '@vueuse/core';
 
 import { LayoutSidebarCollapseButton, LayoutSidebarFixedButton } from './widgets';
 
@@ -274,7 +276,7 @@ function handleMouseleave() {
       },
     ]"
     :style="style"
-    class="fixed left-0 top-0 h-full transition-all-150"
+    class="h-full transition-all-150 left-0 top-0 fixed"
     @mouseenter="handleMouseenter"
     @mouseleave="handleMouseleave"
   >
@@ -290,14 +292,14 @@ function handleMouseleave() {
       <slot name="logo" />
     </div>
 
-    <PScrollbar
-      class="overflow-y-auto pt-2"
+    <AuScrollbar
+      class="pt-2 overflow-y-auto"
       :style="contentStyle"
       shadow
       shadow-border
     >
       <slot />
-    </PScrollbar>
+    </AuScrollbar>
 
     <div :style="collapseStyle" />
 
@@ -313,7 +315,7 @@ function handleMouseleave() {
         'border-l': extraVisible,
       }"
       :style="extraStyle"
-      class="fixed top-0 h-full overflow-hidden border-r border-border bg-sidebar transition-all-200"
+      class="border-r border-border bg-sidebar h-full transition-all-200 top-0 fixed overflow-hidden"
     >
       <LayoutSidebarCollapseButton
         v-if="isSidebarMixed && expandOnHover"
@@ -333,14 +335,14 @@ function handleMouseleave() {
         <slot name="extra-title" />
       </div>
 
-      <PScrollbar
+      <AuScrollbar
         :style="extraContentStyle"
-        class="border-border py-2"
+        class="py-2 border-border"
         shadow
         shadow-border
       >
         <slot name="extra" />
-      </PScrollbar>
+      </AuScrollbar>
     </div>
   </aside>
 </template>

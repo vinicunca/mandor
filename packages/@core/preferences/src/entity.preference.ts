@@ -1,3 +1,7 @@
+import type { DeepPartial } from '@vinicunca/perkakas';
+
+import type { SupportedLanguagesType } from '@mandor/locales';
+
 import type {
   AccessModeType,
   AuthPageLayoutType,
@@ -14,8 +18,6 @@ import type {
   TabsStyleType,
   ThemeModeType,
 } from '@mandor-core/typings';
-import type { SupportedLanguagesType } from '@mandor/locales';
-import type { DeepPartial } from '@vinicunca/perkakas';
 
 export interface AppPreferences {
   /** Access mode */

@@ -1,2 +1,2 @@
-export { default as NgiburAdminLayout } from './ngibur-admin-layout.vue';
-export type * from './ngibur-layout';
+export type * from './layout.typings';
+export { default as MandorAdminLayout } from './mandor-admin-layout.vue';

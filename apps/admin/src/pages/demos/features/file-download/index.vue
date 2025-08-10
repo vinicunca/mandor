@@ -8,7 +8,6 @@ import {
   downloadFileFromImageUrl,
   downloadFileFromUrl,
 } from '@vben/utils';
-
 import { Button, Card } from 'ant-design-vue';
 
 import { downloadFile1, downloadFile2 } from '~~/api/examples/download';
@@ -47,7 +46,10 @@ function getResponse() {
       </Button>
     </Card>
 
-    <Card class="my-5" title="根据地址下载图片">
+    <Card
+      class="my-5"
+      title="根据地址下载图片"
+    >
       <Button
         type="primary"
         @click="
@@ -62,7 +64,10 @@ function getResponse() {
       </Button>
     </Card>
 
-    <Card class="my-5" title="base64流下载">
+    <Card
+      class="my-5"
+      title="base64流下载"
+    >
       <Button
         type="primary"
         @click="
@@ -75,7 +80,10 @@ function getResponse() {
         Download Image
       </Button>
     </Card>
-    <Card class="my-5" title="文本下载">
+    <Card
+      class="my-5"
+      title="文本下载"
+    >
       <Button
         type="primary"
         @click="
@@ -89,12 +97,26 @@ function getResponse() {
       </Button>
     </Card>
 
-    <Card class="my-5" title="Request download">
-      <Button type="primary" @click="getBlob"> 获取Blob </Button>
-      <Button type="primary" class="ml-4" @click="getResponse">
+    <Card
+      class="my-5"
+      title="Request download"
+    >
+      <Button
+        type="primary"
+        @click="getBlob"
+      >
+        获取Blob
+      </Button>
+      <Button
+        type="primary"
+        class="ml-4"
+        @click="getResponse"
+      >
         获取Response
       </Button>
-      <div class="mt-4">{{ downloadResult }}</div>
+      <div class="mt-4">
+        {{ downloadResult }}
+      </div>
     </Card>
   </Page>
 </template>

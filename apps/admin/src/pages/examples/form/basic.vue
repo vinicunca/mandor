@@ -4,7 +4,6 @@ import type { UploadFile } from 'ant-design-vue';
 import { h, ref, toRaw } from 'vue';
 
 import { Page } from '@vben/common-ui';
-
 import { useDebounceFn } from '@vueuse/core';
 import { Button, Card, message, Spin, Tag } from 'ant-design-vue';
 import dayjs from 'dayjs';
@@ -73,7 +72,7 @@ const [BaseForm, baseFormApi] = useVbenForm({
       // 对应组件的参数
       componentProps: {
         // 菜单接口转options格式
-        afterFetch: (data: { name: string; path: string }[]) => {
+        afterFetch: (data: Array<{ name: string; path: string }>) => {
           return data.map((item: any) => ({
             label: item.name,
             value: item.path,
@@ -362,7 +361,7 @@ const [BaseForm, baseFormApi] = useVbenForm({
 });
 
 function onSubmit(values: Record<string, any>) {
-  const files = toRaw(values.files) as UploadFile[];
+  const files = toRaw(values.files) as Array<UploadFile>;
   const doneFiles = files.filter((file) => file.status === 'done');
   const failedFiles = files.filter((file) => file.status !== 'done');
 
@@ -435,11 +434,19 @@ function handleSetFormValue() {
       </div>
     </template>
     <template #extra>
-      <DocButton class="mb-2" path="/components/common-ui/vben-form" />
+      <DocButton
+        class="mb-2"
+        path="/components/common-ui/vben-form"
+      />
     </template>
     <Card title="基础示例">
       <template #extra>
-        <Button type="primary" @click="handleSetFormValue">设置表单值</Button>
+        <Button
+          type="primary"
+          @click="handleSetFormValue"
+        >
+          设置表单值
+        </Button>
       </template>
       <BaseForm />
     </Card>

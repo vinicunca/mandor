@@ -1,4 +1,5 @@
 import type { HtmlTagDescriptor, PluginOption } from 'vite';
+
 import type { FontPluginOptions } from '../typings';
 
 export async function viteFontsPlugin(

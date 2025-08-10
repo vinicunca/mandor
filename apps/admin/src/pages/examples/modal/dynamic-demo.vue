@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useVbenModal } from '@vben/common-ui';
-
 import { Button, message } from 'ant-design-vue';
 
 const [Modal, modalApi] = useVbenModal({
@@ -27,13 +26,22 @@ function handleToggleFullscreen() {
   });
 }
 </script>
+
 <template>
   <Modal>
     <div class="flex-col-center">
-      <Button class="mb-3" type="primary" @click="handleUpdateTitle()">
+      <Button
+        class="mb-3"
+        type="primary"
+        @click="handleUpdateTitle()"
+      >
         内部动态修改标题
       </Button>
-      <Button class="mb-3" type="primary" @click="handleToggleFullscreen()">
+      <Button
+        class="mb-3"
+        type="primary"
+        @click="handleToggleFullscreen()"
+      >
         {{ state.fullscreen ? '退出全屏' : '打开全屏' }}
       </Button>
     </div>

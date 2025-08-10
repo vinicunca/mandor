@@ -1,5 +1,7 @@
 import type { CAC } from 'cac';
+
 import { getPackages } from '@mandor/node-utils';
+
 import depcheck from 'depcheck';
 
 // Default configuration

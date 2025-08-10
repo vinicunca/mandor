@@ -1,5 +1,4 @@
 import type { ComputedRef, Ref } from 'vue';
-import { isNonNullish, toCamelCase } from '@vinicunca/perkakas';
 
 import {
   computed,
@@ -8,6 +7,8 @@ import {
   useAttrs,
   useSlots,
 } from 'vue';
+
+import { isNonNullish, toCamelCase } from '@vinicunca/perkakas';
 
 /**
  * Get values from slots, attrs, props, and state in turn

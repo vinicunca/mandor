@@ -8,7 +8,7 @@ function handleCollapsed() {
 
 <template>
   <div
-    class="absolute bottom-2 left-3 z-10 flex-center cursor-pointer rounded-sm bg-accent p-1 color-foreground/60 hover:bg-accent-hover hover:color-foreground"
+    class="color-foreground/60 p-1 rounded-sm bg-accent flex-center cursor-pointer bottom-2 left-3 absolute z-10 hover:color-foreground hover:bg-accent-hover"
     @click.stop="handleCollapsed"
   >
     <i

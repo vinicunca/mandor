@@ -1,6 +1,8 @@
 <script lang="ts" setup>
-import { LayoutCore, LayoutUserDropdown } from '@mandor/layouts';
 import { computed } from 'vue';
+
+import { LayoutCore, LayoutUserDropdown } from '@mandor/layouts';
+
 import { useAuthStore } from '~~/auth/auth.store';
 import { useUserStore } from '~~/auth/user.store';
 

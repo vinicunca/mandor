@@ -1,6 +1,9 @@
 import type { UserConfig } from 'vite';
+
 import type { DefineApplicationOptions } from '../typings';
+
 import { defineConfig, loadEnv, mergeConfig } from 'vite';
+
 import { loadApplicationPlugins } from '../plugins';
 import { loadAndConvertEnv } from '../utils/env';
 import { getCommonConfig } from './common';

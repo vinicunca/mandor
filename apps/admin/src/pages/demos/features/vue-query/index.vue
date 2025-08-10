@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Page } from '@vben/common-ui';
-
 import { refAutoReset } from '@vueuse/core';
 import { Button, Card, Empty } from 'ant-design-vue';
 
@@ -14,7 +13,7 @@ const showCaching = refAutoReset(true, 1000);
 
 <template>
   <Page title="Vue Query示例">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div class="gap-4 grid grid-cols-1 md:grid-cols-2">
       <Card title="分页查询">
         <PaginatedQueries />
       </Card>
@@ -25,15 +24,20 @@ const showCaching = refAutoReset(true, 1000);
         <QueryRetries />
       </Card>
       <Card
-        title="并发和缓存"
         v-spinning="!showCaching"
+        title="并发和缓存"
         :body-style="{ minHeight: '330px' }"
       >
         <template #extra>
-          <Button @click="showCaching = false">重新加载</Button>
+          <Button @click="showCaching = false">
+            重新加载
+          </Button>
         </template>
         <ConcurrencyCaching v-if="showCaching" />
-        <Empty v-else description="正在加载..." />
+        <Empty
+          v-else
+          description="正在加载..."
+        />
       </Card>
     </div>
   </Page>

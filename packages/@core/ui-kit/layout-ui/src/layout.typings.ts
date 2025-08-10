@@ -3,9 +3,9 @@ import type {
   LayoutHeaderModeType,
   LayoutType,
   ThemeModeType,
-} from '@ngibur-core/typings';
+} from '@mandor-core/typings';
 
-export interface NgiburLayoutProps {
+export interface MandorLayoutProps {
   /**
    * Fixed width for the content area
    * @default 'wide'

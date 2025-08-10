@@ -2,10 +2,9 @@
 import { ref } from 'vue';
 
 import { useVbenModal } from '@vben/common-ui';
-
 import { Button, message } from 'ant-design-vue';
 
-const list = ref<number[]>([]);
+const list = ref<Array<number>>([]);
 
 const [Modal, modalApi] = useVbenModal({
   onCancel() {
@@ -43,7 +42,12 @@ function handleUpdate(len?: number) {
       {{ item }}
     </div>
     <template #prepend-footer>
-      <Button type="link" @click="handleUpdate()">点击更新数据</Button>
+      <Button
+        type="link"
+        @click="handleUpdate()"
+      >
+        点击更新数据
+      </Button>
     </template>
   </Modal>
 </template>

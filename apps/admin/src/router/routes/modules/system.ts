@@ -2,7 +2,7 @@ import type { RouteRecordRaw } from 'vue-router';
 
 import { $t } from '~~/locales';
 
-const routes: RouteRecordRaw[] = [
+const routes: Array<RouteRecordRaw> = [
   {
     meta: {
       icon: 'ion:settings-outline',

@@ -16,6 +16,7 @@ import UnoCSS from 'unocss/vite';
 import viteDtsPlugin from 'vite-plugin-dts';
 import { createHtmlPlugin as viteHtmlPlugin } from 'vite-plugin-html';
 import viteVueDevTools from 'vite-plugin-vue-devtools';
+
 import { viteExtraAppConfigPlugin } from './extra-app-config';
 import { viteFontsPlugin } from './fonts';
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';

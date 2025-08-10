@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 
 import { Page } from '@vben/common-ui';
-
 import { Button, Card, message, Step, Steps, Switch } from 'ant-design-vue';
 
 import { useVbenForm } from '~~/adapter/form';
@@ -99,10 +98,18 @@ async function handleMergeSubmit() {
           class="mr-4"
           un-checked-children="关闭字段合并"
         />
-        <Button type="primary" @click="handleMergeSubmit">合并提交</Button>
+        <Button
+          type="primary"
+          @click="handleMergeSubmit"
+        >
+          合并提交
+        </Button>
       </template>
       <div class="mx-auto max-w-lg">
-        <Steps :current="currentTab" class="steps">
+        <Steps
+          :current="currentTab"
+          class="steps"
+        >
           <Step title="表单1" />
           <Step title="表单2" />
         </Steps>

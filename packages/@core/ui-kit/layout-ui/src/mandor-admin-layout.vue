@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import type { CSSProperties } from 'vue';
 
-import type { NgiburLayoutProps } from './ngibur-layout';
+import type { NgiburLayoutProps } from './layout.typings';
+
+import { computed, ref, useTemplateRef, watch } from 'vue';
+
 import { SCROLL_FIXED_CLASS, useLayoutFooterStyle, useLayoutHeaderStyle } from '@ngibur-core/composables';
 import { ELEMENT_ID_MAIN_CONTENT } from '@ngibur/constants';
-
 import { PButtonIcon } from '@ngibur/pohon-ui';
 import { useMouse, useScroll, useThrottleFn } from '@vueuse/core';
-import { computed, ref, useTemplateRef, watch } from 'vue';
 
 import {
   LayoutContent,
@@ -485,7 +486,7 @@ function handleClickMask() {
 </script>
 
 <template>
-  <div class="relative min-h-full w-full flex">
+  <div class="flex min-h-full w-full relative">
     <LayoutSidebar
       v-if="sidebarEnableState"
       v-model:collapse="sidebarCollapse"
@@ -535,7 +536,7 @@ function handleClickMask() {
 
     <div
       ref="contentRef"
-      class="flex flex-1 flex-col overflow-hidden transition-all-300 ease-in"
+      class="flex flex-1 flex-col transition-all-300 ease-in overflow-hidden"
     >
       <div
         :class="[
@@ -545,7 +546,7 @@ function handleClickMask() {
           SCROLL_FIXED_CLASS,
         ]"
         :style="headerWrapperStyle"
-        class="overflow-hidden transition-all-200"
+        class="transition-all-200 overflow-hidden"
       >
         <LayoutHeader
           v-if="headerVisible"
@@ -623,7 +624,7 @@ function handleClickMask() {
     <div
       v-if="maskVisible"
       :style="maskStyle"
-      class="fixed left-0 top-0 h-full w-full bg-overlay transition-[background-color]-200"
+      class="bg-overlay h-full w-full transition-[background-color]-200 left-0 top-0 fixed"
       @click="handleClickMask"
     />
   </div>

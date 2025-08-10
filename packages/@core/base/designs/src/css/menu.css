@@ -382,7 +382,7 @@
   fill: var(--menu-item-color);
 
   &.is-active {
-    div[data-state='open'] > .mandor-sub-menu-content,
+    div[data-state="open"] > .mandor-sub-menu-content,
     > .mandor-sub-menu-content {
       color: var(--menu-submenu-active-color);
       text-decoration: none;

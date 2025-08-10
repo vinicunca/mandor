@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import type { ChangeEvent } from 'ant-design-vue/es/_util/EventInterface';
-
 import type { Recordable } from '@vben/types';
+import type { ChangeEvent } from 'ant-design-vue/es/_util/EventInterface';
 
 import type { VbenFormSchema } from '~~/adapter/form';
 
@@ -11,7 +10,6 @@ import { useVbenDrawer } from '@vben/common-ui';
 import { IconifyIcon } from '@vben/icons';
 import { $te } from '@vben/locales';
 import { getPopupContainer } from '@vben/utils';
-
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 
 import { useVbenForm, z } from '~~/adapter/form';
@@ -33,7 +31,7 @@ const emit = defineEmits<{
 }>();
 const formData = ref<SystemMenuApi.SystemMenu>();
 const titleSuffix = ref<string>();
-const schema: VbenFormSchema[] = [
+const schema: Array<VbenFormSchema> = [
   {
     component: 'RadioGroup',
     componentProps: {
@@ -76,7 +74,9 @@ const schema: VbenFormSchema[] = [
           return true;
         }
         const title: string = node.meta?.title ?? '';
-        if (!title) return false;
+        if (!title) {
+          return false;
+        }
         return title.includes(input) || $t(title).includes(input);
       },
       getPopupContainer,
@@ -92,7 +92,9 @@ const schema: VbenFormSchema[] = [
       return {
         title({ label, meta }: { label: string; meta: Recordable<any> }) {
           const coms = [];
-          if (!label) return '';
+          if (!label) {
+            return '';
+          }
           if (meta?.icon) {
             coms.push(h(IconifyIcon, { class: 'size-4', icon: meta.icon }));
           }
@@ -471,8 +473,8 @@ async function onSubmit() {
   const { valid } = await formApi.validate();
   if (valid) {
     drawerApi.lock();
-    const data =
-      await formApi.getValues<
+    const data
+      = await formApi.getValues<
         Omit<SystemMenuApi.SystemMenu, 'children' | 'id'>
       >();
     if (data.type === 'link') {
@@ -498,8 +500,15 @@ const getDrawerTitle = computed(() =>
     : $t('ui.actionTitle.create', [$t('system.menu.name')]),
 );
 </script>
+
 <template>
-  <Drawer class="w-full max-w-[800px]" :title="getDrawerTitle">
-    <Form class="mx-4" :layout="isHorizontal ? 'horizontal' : 'vertical'" />
+  <Drawer
+    class="max-w-[800px] w-full"
+    :title="getDrawerTitle"
+  >
+    <Form
+      class="mx-4"
+      :layout="isHorizontal ? 'horizontal' : 'vertical'"
+    />
   </Drawer>
 </template>

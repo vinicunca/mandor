@@ -3,17 +3,16 @@ import type {
   OnActionClickParams,
   VxeTableGridOptions,
 } from '~~/adapter/vxe-table';
+import type { SystemMenuApi } from '~~/api/system/menu';
 
+import { MenuBadge } from '@vben-core/menu-ui';
 import { Page, useVbenDrawer } from '@vben/common-ui';
 import { IconifyIcon, Plus } from '@vben/icons';
 import { $t } from '@vben/locales';
-
-import { MenuBadge } from '@vben-core/menu-ui';
-
 import { Button, message } from 'ant-design-vue';
 
 import { useVbenVxeGrid } from '~~/adapter/vxe-table';
-import { deleteMenu, getMenuList, SystemMenuApi } from '~~/api/system/menu';
+import { deleteMenu, getMenuList } from '~~/api/system/menu';
 
 import { useColumns } from './data';
 import Form from './modules/form.vue';
@@ -110,19 +109,23 @@ function onDelete(row: SystemMenuApi.SystemMenu) {
     });
 }
 </script>
+
 <template>
   <Page auto-content-height>
     <FormDrawer @success="onRefresh" />
     <Grid>
       <template #toolbar-tools>
-        <Button type="primary" @click="onCreate">
+        <Button
+          type="primary"
+          @click="onCreate"
+        >
           <Plus class="size-5" />
           {{ $t('ui.actionTitle.create', [$t('system.menu.name')]) }}
         </Button>
       </template>
       <template #title="{ row }">
-        <div class="flex w-full items-center gap-1">
-          <div class="size-5 flex-shrink-0">
+        <div class="flex gap-1 w-full items-center">
+          <div class="flex-shrink-0 size-5">
             <IconifyIcon
               v-if="row.type === 'button'"
               icon="carbon:security"
@@ -135,7 +138,7 @@ function onDelete(row: SystemMenuApi.SystemMenu) {
             />
           </div>
           <span class="flex-auto">{{ $t(row.meta?.title) }}</span>
-          <div class="items-center justify-end"></div>
+          <div class="items-center justify-end" />
         </div>
         <MenuBadge
           v-if="row.meta?.badgeType"
@@ -148,6 +151,7 @@ function onDelete(row: SystemMenuApi.SystemMenu) {
     </Grid>
   </Page>
 </template>
+
 <style lang="scss" scoped>
 .menu-badge {
   top: 50%;

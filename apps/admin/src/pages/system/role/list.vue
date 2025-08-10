@@ -9,7 +9,6 @@ import type { SystemRoleApi } from '~~/api';
 
 import { Page, useVbenDrawer } from '@vben/common-ui';
 import { Plus } from '@vben/icons';
-
 import { Button, message, Modal } from 'ant-design-vue';
 
 import { useVbenVxeGrid } from '~~/adapter/vxe-table';
@@ -109,7 +108,7 @@ async function onStatusChange(
   try {
     await confirm(
       `你要将${row.name}的状态切换为 【${status[newStatus.toString()]}】 吗？`,
-      `切换状态`,
+      '切换状态',
     );
     await updateRole(row.id, { status: newStatus });
     return true;
@@ -149,12 +148,16 @@ function onCreate() {
   formDrawerApi.setData({}).open();
 }
 </script>
+
 <template>
   <Page auto-content-height>
     <FormDrawer @success="onRefresh" />
     <Grid :table-title="$t('system.role.list')">
       <template #toolbar-tools>
-        <Button type="primary" @click="onCreate">
+        <Button
+          type="primary"
+          @click="onCreate"
+        >
           <Plus class="size-5" />
           {{ $t('ui.actionTitle.create', [$t('system.role.name')]) }}
         </Button>

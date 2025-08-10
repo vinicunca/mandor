@@ -2,7 +2,6 @@
 import { h, markRaw } from 'vue';
 
 import { Page } from '@vben/common-ui';
-
 import { Card, Input, message } from 'ant-design-vue';
 
 import { useVbenForm, z } from '~~/adapter/form';
@@ -88,11 +87,17 @@ function onSubmit(values: Record<string, any>) {
 </script>
 
 <template>
-  <Page description="表单组件自定义示例" title="表单组件">
+  <Page
+    description="表单组件自定义示例"
+    title="表单组件"
+  >
     <Card title="基础示例">
       <Form>
         <template #field3="slotProps">
-          <Input placeholder="请输入" v-bind="slotProps" />
+          <Input
+            placeholder="请输入"
+            v-bind="slotProps"
+          />
         </template>
       </Form>
     </Card>

@@ -1,4 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router';
+
 import { preferences } from '@mandor/preferences';
 
 const LayoutCore = () => import('~~/layouts/core.vue');

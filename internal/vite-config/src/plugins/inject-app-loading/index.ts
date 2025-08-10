@@ -1,8 +1,10 @@
 import type { PluginOption } from 'vite';
+
 import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 import { readPackageJSON } from '@mandor/node-utils';
 
 /**

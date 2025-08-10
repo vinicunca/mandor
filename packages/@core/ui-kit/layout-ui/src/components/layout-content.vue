@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import type { ContentCompactType } from '@ngibur-core/typings';
 import type { CSSProperties } from 'vue';
 
-import { useLayoutContentStyle } from '@ngibur-core/composables';
-import { APrimitiveSlot } from '@ngibur/pohon-ui';
+import type { ContentCompactType } from '@mandor-core/typings';
+
 import { computed } from 'vue';
+
+import { APrimitiveSlot } from '@mandor-core/akar-ui';
+import { useLayoutContentStyle } from '@mandor-core/composables';
 
 interface Props {
   /**
@@ -60,7 +62,7 @@ const style = computed<CSSProperties>(() => {
   <main
     ref="contentElement"
     :style="style"
-    class="relative bg-background-deep"
+    class="bg-background-deep relative"
   >
     <APrimitiveSlot :style="overlayStyle">
       <slot name="overlay" />

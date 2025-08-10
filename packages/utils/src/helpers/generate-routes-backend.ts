@@ -4,6 +4,7 @@ import type {
   RouteRecordRaw,
   RouteRecordStringComponent,
 } from '@mandor/typings';
+
 import { mapTree } from '@mandor-core/shared/utils';
 
 /**

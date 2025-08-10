@@ -1,13 +1,14 @@
 import type { App } from 'vue';
 import type { Locale } from 'vue-i18n';
+
 import type {
   ImportLocaleFn,
   LoadMessageFn,
   LocaleSetupOptions,
   SupportedLanguagesType,
 } from './typings';
-import { unref } from 'vue';
 
+import { unref } from 'vue';
 import { createI18n } from 'vue-i18n';
 
 export const i18n = createI18n({

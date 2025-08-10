@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useVbenDrawer } from '@vben/common-ui';
-
 import { Button, message } from 'ant-design-vue';
 
 const [Drawer, drawerApi] = useVbenDrawer({
@@ -20,10 +19,15 @@ function handleUpdateTitle() {
   drawerApi.setState({ title: '内部动态标题' });
 }
 </script>
+
 <template>
   <Drawer>
     <div class="flex-col-center">
-      <Button class="mb-3" type="primary" @click="handleUpdateTitle()">
+      <Button
+        class="mb-3"
+        type="primary"
+        @click="handleUpdateTitle()"
+      >
         内部动态修改标题
       </Button>
     </div>

@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 
 import { useVbenDrawer } from '@vben/common-ui';
-
 import { message } from 'ant-design-vue';
 
 const data = ref();
@@ -22,8 +21,11 @@ const [Drawer, drawerApi] = useVbenDrawer({
   },
 });
 </script>
+
 <template>
   <Drawer title="数据共享示例">
-    <div class="flex-col-center">外部传递数据： {{ data }}</div>
+    <div class="flex-col-center">
+      外部传递数据： {{ data }}
+    </div>
   </Drawer>
 </template>

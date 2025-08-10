@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { Page } from '@vben/common-ui';
 import { useWatermark } from '@vben/hooks';
-
 import { Button, Card } from 'ant-design-vue';
 
 const { destroyWatermark, updateWatermark, watermark } = useWatermark();
@@ -78,7 +77,11 @@ async function createWaterMark() {
       >
         更新水印
       </Button>
-      <Button :disabled="!watermark" danger @click="destroyWatermark">
+      <Button
+        :disabled="!watermark"
+        danger
+        @click="destroyWatermark"
+      >
         移除水印
       </Button>
     </Card>

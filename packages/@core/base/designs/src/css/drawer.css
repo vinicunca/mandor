@@ -1,14 +1,15 @@
 [data-akar-drawer] {
   touch-action: none;
-  will-change: transform;
   transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform;
 }
 
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='bottom'][data-state='open'] {
   animation-name: drawer-slide-from-bottom;
 }
+
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='bottom'][data-state='closed'] {
   animation-name: drawer-slide-to-bottom;
 }
@@ -16,6 +17,7 @@
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='top'][data-state='open'] {
   animation-name: drawer-slide-from-top;
 }
+
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='top'][data-state='closed'] {
   animation-name: drawer-slide-to-top;
 }
@@ -23,6 +25,7 @@
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='left'][data-state='open'] {
   animation-name: drawer-slide-from-left;
 }
+
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='left'][data-state='closed'] {
   animation-name: drawer-slide-to-left;
 }
@@ -30,6 +33,7 @@
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='right'][data-state='open'] {
   animation-name: drawer-slide-from-right;
 }
+
 [data-akar-drawer][data-akar-snap-points='false'][data-akar-drawer-direction='right'][data-state='closed'] {
   animation-name: drawer-slide-to-right;
 }
@@ -70,9 +74,11 @@
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
+
 [data-akar-overlay][data-akar-snap-points='false'][data-state='open'] {
   animation-name: drawer-fade-in;
 }
+
 [data-akar-overlay][data-state='closed'] {
   animation-name: drawer-fade-out;
 }
@@ -91,41 +97,41 @@
 }
 
 [data-akar-drawer]:not([data-akar-custom-container='true'])::after {
-  content: '';
   position: absolute;
+  content: '';
   background: inherit;
   background-color: inherit;
 }
 
 [data-akar-drawer][data-akar-drawer-direction='top']::after {
   top: initial;
+  right: 0;
   bottom: 100%;
   left: 0;
-  right: 0;
   height: 200%;
 }
 
 [data-akar-drawer][data-akar-drawer-direction='bottom']::after {
   top: 100%;
+  right: 0;
   bottom: initial;
   left: 0;
-  right: 0;
   height: 200%;
 }
 
 [data-akar-drawer][data-akar-drawer-direction='left']::after {
-  left: initial;
-  right: 100%;
   top: 0;
+  right: 100%;
   bottom: 0;
+  left: initial;
   width: 200%;
 }
 
 [data-akar-drawer][data-akar-drawer-direction='right']::after {
-  left: 100%;
-  right: initial;
   top: 0;
+  right: initial;
   bottom: 0;
+  left: 100%;
   width: 200%;
 }
 
@@ -140,16 +146,16 @@
 }
 
 [data-akar-handle] {
-  display: block;
   position: relative;
-  opacity: 0.7;
-  background: #e2e2e4;
-  margin-left: auto;
-  margin-right: auto;
-  height: 5px;
+  display: block;
   width: 32px;
-  border-radius: 1rem;
+  height: 5px;
+  margin-right: auto;
+  margin-left: auto;
   touch-action: pan-y;
+  background: #e2e2e4;
+  border-radius: 1rem;
+  opacity: 0.7;
 }
 
 [data-akar-handle]:hover,
@@ -159,12 +165,12 @@
 
 [data-akar-handle-hitarea] {
   position: absolute;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  left: 50%;
   width: max(100%, 2.75rem); /* 44px */
   height: max(100%, 2.75rem); /* 44px */
   touch-action: inherit;
+  transform: translate(-50%, -50%);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -184,6 +190,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -199,6 +206,7 @@
   from {
     transform: translate3d(0, var(--initial-transform, 100%), 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
@@ -214,6 +222,7 @@
   from {
     transform: translate3d(0, calc(var(--initial-transform, 100%) * -1), 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
@@ -229,6 +238,7 @@
   from {
     transform: translate3d(calc(var(--initial-transform, 100%) * -1), 0, 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
@@ -244,6 +254,7 @@
   from {
     transform: translate3d(var(--initial-transform, 100%), 0, 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }

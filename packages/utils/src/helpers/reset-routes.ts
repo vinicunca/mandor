@@ -1,4 +1,5 @@
 import type { Router, RouteRecordName, RouteRecordRaw } from 'vue-router';
+
 import { traverseTreeValues } from '@mandor-core/shared/utils';
 
 /**
