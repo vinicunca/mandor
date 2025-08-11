@@ -7,7 +7,7 @@ import { computed, ref, useTemplateRef, watch } from 'vue';
 
 import { ELEMENT_ID_MAIN_CONTENT } from '@mandor/constants';
 
-import { PButtonIcon } from '@mandor-core/akar-ui';
+import { AuButtonIcon } from '@mandor-core/akar-ui';
 import { SCROLL_FIXED_CLASS, useLayoutFooterStyle, useLayoutHeaderStyle } from '@mandor-core/composables';
 
 import { useMouse, useScroll, useThrottleFn } from '@vueuse/core';
@@ -569,7 +569,7 @@ function handleClickMask() {
           </template>
 
           <template #toggle-button>
-            <PButtonIcon
+            <AuButtonIcon
               v-if="showHeaderToggleButton"
               class="my-0 mr-1"
               icon="i-lucide:menu"

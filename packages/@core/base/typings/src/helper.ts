@@ -96,7 +96,7 @@ type ComponentSlots<T extends { slots?: Record<string, any> }> = Id<{
  * Defines the configuration shape expected for a component.
  * @template T The component's theme`.
  */
-export interface PComponentConfig<
+export interface MandorComponentConfig<
   T extends Record<string, any>,
 > {
   variants: ComponentVariants<T>;
