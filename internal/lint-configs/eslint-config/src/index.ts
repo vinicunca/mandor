@@ -8,7 +8,6 @@ export async function defineConfig() {
       vue: true,
       pnpm: true,
       formatters: {
-        css: true,
         html: true,
       },
     },
@@ -66,6 +65,25 @@ export async function defineConfig() {
         'no-console': 'off',
         'node/prefer-global/process': 'off',
         'sonar/hashing': 'off',
+      },
+    },
+
+    {
+      files: ['packages/@core/ui-kit/akar-ui/**/*.vue'],
+      rules: {
+      /**
+       * Exporting an interface in vue files is not possibile within script setup,
+       * so there's a case where we define two script tags in a single vue file.
+       * If we don't turn this off, we will have to define the import statements in the first script tag,
+       * where we don't want that.
+       */
+        'import/first': 'off',
+
+        /**
+         * We need to turn this off since within vue templates we use a lot of type casting and if we don't wrap it
+         * in parenthesis, the syntax highlighting will break.
+         */
+        'vue/no-extra-parens': 'off',
       },
     },
   );

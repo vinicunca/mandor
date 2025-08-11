@@ -15,8 +15,14 @@
     "@mandor-core/icons": "workspace:*",
     "@mandor-core/shared": "workspace:*",
     "@mandor-core/typings": "workspace:*",
+    "@standard-schema/spec": "catalog:",
+    "@vinicunca/perkakas": "catalog:",
     "@vueuse/core": "catalog:",
     "akar": "catalog:",
-    "vue": "catalog:"
+    "ohash": "catalog:",
+    "ufo": "catalog:",
+    "unocss-variants": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   }
 }

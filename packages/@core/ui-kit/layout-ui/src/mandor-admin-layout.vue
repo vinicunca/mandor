@@ -1,13 +1,15 @@
 <script lang="ts" setup>
 import type { CSSProperties } from 'vue';
 
-import type { NgiburLayoutProps } from './layout.typings';
+import type { MandorLayoutProps } from './layout.typings';
 
 import { computed, ref, useTemplateRef, watch } from 'vue';
 
-import { SCROLL_FIXED_CLASS, useLayoutFooterStyle, useLayoutHeaderStyle } from '@ngibur-core/composables';
-import { ELEMENT_ID_MAIN_CONTENT } from '@ngibur/constants';
-import { PButtonIcon } from '@ngibur/pohon-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@mandor/constants';
+
+import { PButtonIcon } from '@mandor-core/akar-ui';
+import { SCROLL_FIXED_CLASS, useLayoutFooterStyle, useLayoutHeaderStyle } from '@mandor-core/composables';
+
 import { useMouse, useScroll, useThrottleFn } from '@vueuse/core';
 
 import {
@@ -24,7 +26,7 @@ defineOptions({
 });
 
 const props = withDefaults(
-  defineProps<NgiburLayoutProps>(),
+  defineProps<MandorLayoutProps>(),
   {
     contentCompact: 'wide',
     contentCompactWidth: 1200,

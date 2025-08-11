@@ -68,11 +68,11 @@ catalog:
   rollup-plugin-visualizer: ^5.14.0
   secure-ls: ^2.0.0
   sortablejs: ^1.15.6
-  stylelint: ^16.21.0
-  stylelint-config-recess-order: ^6.1.0
-  stylelint-config-recommended: ^16.0.0
+  stylelint: ^16.23.1
+  stylelint-config-recess-order: ^7.1.0
+  stylelint-config-recommended: ^17.0.0
   stylelint-config-recommended-vue: ^1.6.1
-  stylelint-config-standard: ^38.0.0
+  stylelint-config-standard: ^39.0.0
   stylelint-order: ^7.0.0
   stylelint-prettier: ^5.0.3
   theme-colors: ^0.1.0
@@ -92,3 +92,8 @@ catalog:
   vue-i18n: ^11.1.7
   vue-router: 4.5.1
   vue-tsc: 3.0.5
+catalogs:
+  conflicts_unocss-variants_:
+    unocss-variants: ''
+  conflicts_unocss-variants_c:
+    unocss-variants: c

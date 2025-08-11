@@ -91,7 +91,7 @@ function handleScroll(event: Event) {
   <BaseScrollArea
     :class="[computedShadowClasses]"
     :on-scroll="handleScroll"
-    class="ngibur-scrollbar relative"
+    class="mandor-scrollbar relative"
   >
     <div
       v-if="showShadowTop"
@@ -122,7 +122,7 @@ function handleScroll(event: Event) {
 </template>
 
 <style scoped>
-.ngibur-scrollbar {
+.mandor-scrollbar {
   &:not(.both-shadow).left-shadow {
     mask-image: linear-gradient(90deg, transparent, #000 16px);
   }
