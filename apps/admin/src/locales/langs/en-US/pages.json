@@ -2,12 +2,9 @@
   "auth": {
     "login": "Login"
   },
-  "ticketing": {
-    "title": "Ticketing",
-    "checkIn": "Check In",
-    "events": {
-      "title": "Events",
-      "description": "Manage your events and ticketing system."
-    }
+  "dashboard": {
+    "title": "Dashboard",
+    "analytics": "Analytics",
+    "workspace": "Workspace"
   }
 }

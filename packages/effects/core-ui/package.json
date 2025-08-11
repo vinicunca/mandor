@@ -1,0 +1,17 @@
+{
+  "name": "@mandor/core-ui",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@mandor-core/akar-ui": "workspace:*",
+    "@mandor/locales": "workspace:*",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  }
+}

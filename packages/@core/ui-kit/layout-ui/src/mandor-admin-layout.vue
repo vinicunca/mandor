@@ -22,7 +22,7 @@ import {
 import { useLayout } from './use-layout';
 
 defineOptions({
-  name: 'NgiburAdminLayout',
+  name: 'MandorAdminLayout',
 });
 
 const props = withDefaults(

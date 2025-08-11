@@ -1,4 +1,4 @@
-import type { MenuRecordRaw } from '@mandor/typings';
+import type { MenuRecordRaw } from '@mandor-core/typings';
 
 export function findMenuByPath(
   { list, path }:

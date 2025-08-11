@@ -320,12 +320,21 @@ importers:
 
   apps/admin:
     dependencies:
+      '@mandor/access':
+        specifier: workspace:*
+        version: link:../../packages/effects/access
       '@mandor/constants':
         specifier: workspace:*
         version: link:../../packages/constants
+      '@mandor/core-ui':
+        specifier: workspace:*
+        version: link:../../packages/effects/core-ui
       '@mandor/designs':
         specifier: workspace:*
         version: link:../../packages/@core/base/designs
+      '@mandor/layouts':
+        specifier: workspace:*
+        version: link:../../packages/effects/layouts
       '@mandor/locales':
         specifier: workspace:*
         version: link:../../packages/locales
@@ -696,6 +705,105 @@ importers:
 
   packages/constants: {}
 
+  packages/effects/access:
+    dependencies:
+      '@mandor/typings':
+        specifier: workspace:*
+        version: link:../../typings
+      '@mandor/utils':
+        specifier: workspace:*
+        version: link:../../utils
+      '@vinicunca/perkakas':
+        specifier: 'catalog:'
+        version: 1.7.1
+
+  packages/effects/composables:
+    dependencies:
+      '@mandor-core/composables':
+        specifier: workspace:*
+        version: link:../../@core/composables
+      '@mandor/typings':
+        specifier: workspace:*
+        version: link:../../typings
+      '@vueuse/core':
+        specifier: 'catalog:'
+        version: 13.6.0(vue@3.5.18(typescript@5.9.2))
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.18(typescript@5.9.2)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.18(typescript@5.9.2))
+
+  packages/effects/core-ui:
+    dependencies:
+      '@mandor-core/akar-ui':
+        specifier: workspace:*
+        version: link:../../@core/ui-kit/akar-ui
+      '@mandor/locales':
+        specifier: workspace:*
+        version: link:../../locales
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.18(typescript@5.9.2)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.18(typescript@5.9.2))
+
+  packages/effects/layouts:
+    dependencies:
+      '@mandor-core/akar-ui':
+        specifier: workspace:*
+        version: link:../../@core/ui-kit/akar-ui
+      '@mandor-core/composables':
+        specifier: workspace:*
+        version: link:../../@core/composables
+      '@mandor-core/layout-ui':
+        specifier: workspace:*
+        version: link:../../@core/ui-kit/layout-ui
+      '@mandor/composables':
+        specifier: workspace:*
+        version: link:../composables
+      '@mandor/constants':
+        specifier: workspace:*
+        version: link:../../constants
+      '@mandor/icons':
+        specifier: workspace:*
+        version: link:../../icons
+      '@mandor/locales':
+        specifier: workspace:*
+        version: link:../../locales
+      '@mandor/preferences':
+        specifier: workspace:*
+        version: link:../../preferences
+      '@mandor/stores':
+        specifier: workspace:*
+        version: link:../../stores
+      '@mandor/typings':
+        specifier: workspace:*
+        version: link:../../typings
+      '@mandor/utils':
+        specifier: workspace:*
+        version: link:../../utils
+      '@vinicunca/perkakas':
+        specifier: 'catalog:'
+        version: 1.7.1
+      '@vueuse/core':
+        specifier: 'catalog:'
+        version: 13.6.0(vue@3.5.18(typescript@5.9.2))
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.18(typescript@5.9.2)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.18(typescript@5.9.2))
+
+  packages/icons:
+    dependencies:
+      '@mandor-core/icons':
+        specifier: workspace:*
+        version: link:../@core/icons
+
   packages/locales:
     dependencies:
       vue:
@@ -719,6 +827,21 @@ importers:
 
   packages/stores:
     dependencies:
+      '@mandor-core/preferences':
+        specifier: workspace:*
+        version: link:../@core/preferences
+      '@mandor-core/shared':
+        specifier: workspace:*
+        version: link:../@core/base/shared
+      '@mandor-core/typings':
+        specifier: workspace:*
+        version: link:../@core/base/typings
+      '@mandor/typings':
+        specifier: workspace:*
+        version: link:../typings
+      '@vinicunca/perkakas':
+        specifier: 'catalog:'
+        version: 1.7.1
       pinia:
         specifier: 'catalog:'
         version: 3.0.3(typescript@5.9.2)(vue@3.5.18(typescript@5.9.2))
@@ -728,6 +851,12 @@ importers:
       secure-ls:
         specifier: 'catalog:'
         version: 2.0.0
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.18(typescript@5.9.2)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.18(typescript@5.9.2))
 
   packages/typings:
     dependencies:

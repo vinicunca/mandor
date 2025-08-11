@@ -1,15 +1,14 @@
 import type { RouteRecordRaw } from 'vue-router';
 
-import {
-  VBEN_ANT_PREVIEW_URL,
-  VBEN_DOC_URL,
-  VBEN_ELE_PREVIEW_URL,
-  VBEN_GITHUB_URL,
-  VBEN_LOGO_URL,
-  VBEN_NAIVE_PREVIEW_URL,
-} from '@vben/constants';
-import { SvgAntdvLogoIcon } from '@vben/icons';
-
+// import {
+//   VBEN_ANT_PREVIEW_URL,
+//   VBEN_DOC_URL,
+//   VBEN_ELE_PREVIEW_URL,
+//   VBEN_GITHUB_URL,
+//   VBEN_LOGO_URL,
+//   VBEN_NAIVE_PREVIEW_URL,
+// } from '@vben/constants';
+// import { SvgAntdvLogoIcon } from '@vben/icons';
 import { IFrameView } from '~~/layouts';
 import { $t } from '~~/locales';
 
@@ -17,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     meta: {
       badgeType: 'dot',
-      icon: VBEN_LOGO_URL,
+      // icon: VBEN_LOGO_URL,
       order: 9998,
       title: $t('demos.vben.title'),
     },
@@ -30,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
         component: IFrameView,
         meta: {
           icon: 'lucide:book-open-text',
-          link: VBEN_DOC_URL,
+          // link: VBEN_DOC_URL,
           title: $t('demos.vben.document'),
         },
       },
@@ -40,7 +39,7 @@ const routes: Array<RouteRecordRaw> = [
         component: IFrameView,
         meta: {
           icon: 'mdi:github',
-          link: VBEN_GITHUB_URL,
+          // link: VBEN_GITHUB_URL,
           title: 'Github',
         },
       },
@@ -50,8 +49,8 @@ const routes: Array<RouteRecordRaw> = [
         component: IFrameView,
         meta: {
           badgeType: 'dot',
-          icon: SvgAntdvLogoIcon,
-          link: VBEN_ANT_PREVIEW_URL,
+          // icon: SvgAntdvLogoIcon,
+          // link: VBEN_ANT_PREVIEW_URL,
           title: $t('demos.vben.antdv'),
         },
       },
@@ -62,7 +61,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           badgeType: 'dot',
           icon: 'logos:naiveui',
-          link: VBEN_NAIVE_PREVIEW_URL,
+          // link: VBEN_NAIVE_PREVIEW_URL,
           title: $t('demos.vben.naive-ui'),
         },
       },
@@ -73,7 +72,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           badgeType: 'dot',
           icon: 'logos:element',
-          link: VBEN_ELE_PREVIEW_URL,
+          // link: VBEN_ELE_PREVIEW_URL,
           title: $t('demos.vben.element-plus'),
         },
       },

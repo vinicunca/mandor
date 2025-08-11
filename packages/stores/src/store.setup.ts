@@ -32,49 +32,26 @@ export async function initStores(app: App, options: InitStoreOptions) {
     metaKey: `${namespace}-secure-meta`,
   });
 
-  const supabaseKey = getSupabaseKey();
-
   pinia.use(
     createPersistedState({
       // key $appName-$store.id
-      key: (storeKey) => {
-        if (storeKey === 'core-access') {
-          return supabaseKey;
-        }
-
-        return `${namespace}-${storeKey}`;
-      },
-      storage: {
-        getItem(key) {
-          if (key === supabaseKey) {
-            return localStorage.getItem(supabaseKey);
-          }
-
-          return import.meta.env.DEV
-            ? localStorage.getItem(key)
-            : ls.get(key);
-        },
-        setItem(key, value) {
-          if (import.meta.env.DEV || key === supabaseKey) {
-            localStorage.setItem(key, value);
-          } else {
-            ls.set(key, value);
-          }
-        },
-      },
+      key: (storeKey) => `${namespace}-${storeKey}`,
+      storage: import.meta.env.DEV
+        ? localStorage
+        : {
+            getItem(key) {
+              return ls.get(key);
+            },
+            setItem(key, value) {
+              ls.set(key, value);
+            },
+          },
     }),
   );
 
   app.use(pinia);
 
   return pinia;
-}
-
-function getSupabaseKey() {
-  const supabaseUrl = import.meta.env.VITE_GLOB_SUPABASE_URL;
-  const baseUrl = new URL(supabaseUrl);
-
-  return `sb-${baseUrl.hostname.split('.')[0]}-auth-token`;
 }
 
 export function resetAllStores() {

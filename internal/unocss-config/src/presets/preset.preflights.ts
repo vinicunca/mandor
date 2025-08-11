@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 export function getCorePreflights(): Array<Preflight> {
   return [
     generateGlobalBase(),
+    generateThemeColorsVariables(),
   ];
 }
 
@@ -34,6 +35,21 @@ function generateGlobalBase(): Preflight<Theme> {
       const css = getFileContent('./styles/preset.global.css');
 
       return compressCSS(css);
+    },
+  };
+}
+
+function generateThemeColorsVariables(): Preflight<Theme> {
+  return {
+    getCSS: () => {
+      const tokenCss = getFileContent('./styles/preset.tokens.css');
+      const darkCss = getFileContent('./styles/preset.dark.css');
+
+      return compressCSS(`
+        ${tokenCss}
+
+        ${darkCss}
+      `);
     },
   };
 }

@@ -8,8 +8,11 @@
     "dev": "pnpm vite --mode development"
   },
   "dependencies": {
+    "@mandor/access": "workspace:*",
     "@mandor/constants": "workspace:*",
+    "@mandor/core-ui": "workspace:*",
     "@mandor/designs": "workspace:*",
+    "@mandor/layouts": "workspace:*",
     "@mandor/locales": "workspace:*",
     "@mandor/preferences": "workspace:*",
     "@mandor/stores": "workspace:*",

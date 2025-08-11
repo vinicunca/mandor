@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { PApp } from '@mandor/core-ui';
+import { AuApp } from '@mandor/core-ui';
 </script>
 
 <template>
-  <PApp>
+  <AuApp>
     <RouterView />
-  </PApp>
+  </AuApp>
 </template>

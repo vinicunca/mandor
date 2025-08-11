@@ -9,8 +9,15 @@
     }
   },
   "dependencies": {
+    "@mandor-core/preferences": "workspace:*",
+    "@mandor-core/shared": "workspace:*",
+    "@mandor-core/typings": "workspace:*",
+    "@mandor/typings": "workspace:*",
+    "@vinicunca/perkakas": "catalog:",
     "pinia": "catalog:",
     "pinia-plugin-persistedstate": "catalog:",
-    "secure-ls": "catalog:"
+    "secure-ls": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   }
 }

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { FallbackCore } from '@ngibur/core-ui';
+import { FallbackCore } from '@mandor/core-ui';
 </script>
 
 <template>

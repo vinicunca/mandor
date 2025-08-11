@@ -6,6 +6,7 @@ import {
 
 import { resetStaticRoutes } from '@mandor/utils';
 
+import { createRouterGuard } from './core.guard';
 import { routes } from './routes';
 
 export const router = createRouter({
@@ -28,3 +29,5 @@ export const router = createRouter({
 });
 
 export const resetRoutes = () => resetStaticRoutes({ router, routes });
+
+createRouterGuard(router);

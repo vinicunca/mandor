@@ -1,0 +1,58 @@
+.dark {
+  /* Accent */
+  --mandor-color-accent: 216 5% 19%;
+  --mandor-color-accent-lighter: 216 5% 12%;
+  --mandor-color-accent-hover: 216 5% 24%;
+  --mandor-color-accent-foreground: 0 0% 98%;
+
+  /* Background */
+  --mandor-color-background: 222.34deg 10.43% 12.27%;
+  --mandor-color-background-deep: 220deg 13.06% 9%;
+
+  /* Border */
+  --mandor-color-border: 240 3.7% 22%;
+
+  /* Card */
+  --mandor-color-card: 222.34deg 10.43% 12.27%;
+  --mandor-color-card-foreground: 210 40% 98%;
+
+  /* Foreground */
+  --mandor-color-foreground: 0 0% 95%;
+
+  /* Header */
+  --mandor-color-header: 222.34deg 10.43% 12.27%;
+
+  /* Input */
+  --mandor-color-input: 0deg 0% 100% / 10%;
+  --mandor-color-input-background: 0deg 0% 100% / 5%;
+
+  /* Muted */
+  --mandor-color-muted: 240 3.7% 15.9%;
+  --mandor-color-muted-foreground: 240 5% 64.9%;
+
+  /* Popover */
+  --mandor-color-popover: 0 0% 14.2%;
+  --mandor-color-popover-foreground: 210 40% 98%;
+
+  /* Overlay colors */
+  --mandor-color-overlay: 0deg 0% 0% / 40%;
+  --mandor-color-overlay-content: 0deg 0% 0% / 40%;
+
+  /* Used for focus ring */
+  --mandor-color-ring: 222.2 84% 4.9%;
+
+  /* Sidebar */
+  --mandor-color-sidebar: 222.34deg 10.43% 12.27%;
+  --mandor-color-sidebar-deep: 220deg 13.06% 9%;
+
+  /* TODO: get all usage and move them into uno classes */
+  /* Brand themes */
+  --mandor-color-secondary: 240 5% 17%;
+  --mandor-color-secondary-foreground: 0 0% 98%;
+  --mandor-color-info: 180, 1.54%, 12.75%;
+  --mandor-color-info-foreground: 220, 4%, 58%;
+  --mandor-color-destructive: 359.21 68.47% 56.47%;
+  --mandor-color-destructive-foreground: 0 0% 98%;
+
+  color-scheme: dark;
+}

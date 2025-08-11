@@ -1,0 +1,17 @@
+{
+  "name": "@mandor/access",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@mandor/typings": "workspace:*",
+    "@mandor/utils": "workspace:*",
+    "@vinicunca/perkakas": "catalog:"
+  }
+}
