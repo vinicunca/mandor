@@ -1,6 +1,8 @@
 import type { Component } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
 
+import type { LinkRecord } from './link-record';
+
 /**
  * Extended route record object
  */
@@ -71,4 +73,14 @@ export interface MenuRecordRaw extends MenuRecordBadgeRaw {
    * @default true
    */
   show?: boolean;
+}
+
+export interface NavigationMenuRecord extends LinkRecord {
+  defaultOpen?: boolean;
+  isOpen?: boolean;
+  /**
+   * The value of the item. Avoid using `index` as the value to prevent conflicts in horizontal orientation with Akar.
+   * @defaultValue `item-${index}`
+   */
+  value?: string;
 }

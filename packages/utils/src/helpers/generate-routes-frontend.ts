@@ -1,4 +1,4 @@
-import type { RouteRecordRaw } from '@mandor/typings';
+import type { RouteRecordRaw } from 'vue-router';
 
 import { filterTree, mapTree } from '@mandor-core/shared/utils';
 

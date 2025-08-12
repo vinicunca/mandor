@@ -1,10 +1,10 @@
+// @unocss-include
+
 import type { MandorComponentConfig } from '@mandor-core/typings';
 
 import { uv } from 'unocss-variants';
 
 import { buttonGroupVariant } from '../button/button-group.theme';
-
-// @unocss-include
 
 export const buttonUv = uv({
   slots: {

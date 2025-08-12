@@ -28,13 +28,13 @@ catalog:
   '@types/node': ^22.16.0
   '@types/nprogress': ^0.2.3
   '@types/sortablejs': ^1.15.8
-  '@vinicunca/eslint-config': ^3.21.0
+  '@vinicunca/eslint-config': ^3.21.1
   '@vinicunca/perkakas': ^1.7.1
   '@vinicunca/unocss-preset': ^1.18.0
   '@vitejs/plugin-vue': ^6.0.1
   '@vitejs/plugin-vue-jsx': ^5.0.1
   '@vueuse/core': ^13.6.0
-  akar: ^1.9.0
+  akar: ^1.10.0
   cac: ^6.7.14
   chalk: ^5.4.1
   circular-dependency-scanner: ^2.3.0

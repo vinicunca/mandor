@@ -19,3 +19,7 @@ export function bindMethods<T extends object>(instance: T): void {
     }
   });
 }
+
+export function isArrayOfArray<A>(item: Array<A> | Array<Array<A>>): item is Array<Array<A>> {
+  return Array.isArray(item[0]);
+}
