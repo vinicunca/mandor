@@ -282,15 +282,7 @@ const headerSlots = computed(() => {
           v-if="showHeaderNav"
           #menu
         >
-          <LayoutMenu
-            :default-active="headerActive"
-            :menus="wrapperMenus({ menus: headerMenus })"
-            :rounded="isMenuRounded"
-            :theme="headerTheme"
-            class="w-full"
-            mode="horizontal"
-            @select="handleMenuSelect"
-          />
+          <!--  -->
         </template>
 
         <template #user-dropdown>
@@ -327,26 +319,12 @@ const headerSlots = computed(() => {
     </template>
 
     <template #mixed-menu>
-      <LayoutMixedMenu
-        :active-path="extraActiveMenu"
-        :menus="wrapperMenus({ menus: mixHeaderMenus, deep: false })"
-        :rounded="isMenuRounded"
-        :theme="sidebarTheme"
-        @default-select="handleDefaultSelect"
-        @enter="handleMenuMouseEnter"
-        @select="handleMixedMenuSelect"
-      />
+      <!--  -->
     </template>
 
     <!-- Additional side area -->
     <template #side-extra>
-      <LayoutExtraMenu
-        :accordion="preferences.navigation.accordion"
-        :collapse="preferences.sidebar.extraCollapse"
-        :menus="wrapperMenus({ menus: extraMenus })"
-        :rounded="isMenuRounded"
-        :theme="sidebarTheme"
-      />
+      <!--  -->
     </template>
 
     <template #side-extra-title>

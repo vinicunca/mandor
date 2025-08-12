@@ -1,12 +1,11 @@
-import type { MenuItemPayload, MenuProps } from '@mandor-core/menu-ui';
 import type { MenuRecordRaw } from '@mandor/typings';
+
+import { computed, onBeforeMount, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
 import { preferences, usePreferences } from '@mandor/preferences';
 import { useAccessStore } from '@mandor/stores';
-
 import { findRootMenuByPath } from '@mandor/utils';
-import { computed, onBeforeMount, ref, watch } from 'vue';
-import { useRoute } from 'vue-router';
 
 import { useNavigation } from './use-navigation';
 

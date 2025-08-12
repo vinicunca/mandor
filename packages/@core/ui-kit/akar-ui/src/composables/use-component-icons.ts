@@ -1,6 +1,7 @@
 import type { MaybeRefOrGetter } from 'vue';
 
-// import type { PAvatarProps } from '../components';
+import type { AuAvatarProps } from '../components';
+
 import { computed, toValue } from 'vue';
 
 export interface UseComponentIconsProps {
@@ -10,7 +11,7 @@ export interface UseComponentIconsProps {
    */
   icon?: string;
   /** Display an avatar on the left side. */
-  // avatar?: PAvatarProps;
+  avatar?: AuAvatarProps;
   /** When `true`, the icon will be displayed on the left side. */
   leading?: boolean;
   /**

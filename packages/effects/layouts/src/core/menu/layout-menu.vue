@@ -1,12 +1,16 @@
-<script lang="ts" setup>
-import type { MenuRecordRaw } from '@mandor/typings';
+<script lang="ts">
+import type { ArrayOrNested } from '@mandor/typings';
+</script>
 
-// import type { MenuItemPayload, MenuProps } from '@mandor-core/menu-ui';
+<script setup lang="ts" generic="T extends ArrayOrNested<NavigationMenuItem>">
+import { computed } from 'vue';
 
-// import { mandorMenu } from '@mandor-core/menu-ui';
+import { isArrayOfArray } from '@mandor/utils';
+
+import { AuNavigationMenu } from '@mandor-core/akar-ui';
 
 interface Props {
-  menus?: Array<MenuRecordRaw>;
+
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -35,7 +39,5 @@ function handleMenuOpen(item: MenuItemPayload) {
 </script>
 
 <template>
-  <div>
-    Layout Menu
-  </div>
+  <AuNavigationMenu />
 </template>
