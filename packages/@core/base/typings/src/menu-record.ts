@@ -76,6 +76,9 @@ export interface MenuRecordRaw extends MenuRecordBadgeRaw {
 }
 
 export interface NavigationMenuRecord extends LinkRecord {
+  label?: string;
+  icon?: string;
+  badge?: string | number;
   defaultOpen?: boolean;
   isOpen?: boolean;
   /**

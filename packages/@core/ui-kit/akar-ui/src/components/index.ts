@@ -4,6 +4,7 @@ export * from './badge';
 export * from './button';
 export * from './chip';
 export * from './icon';
+export * from './kbd';
 export * from './link';
 export * from './logo';
 export * from './navigation-menu';

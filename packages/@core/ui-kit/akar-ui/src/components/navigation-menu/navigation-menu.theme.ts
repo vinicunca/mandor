@@ -35,6 +35,74 @@ export const navigationMenuUv = uv({
     indicator: 'absolute data-[state=visible]:animate-[fade-in_100ms_ease-out] data-[state=hidden]:animate-[fade-out_100ms_ease-in] data-[state=hidden]:opacity-0 bottom-0 z-[2] w-(--akar-navigation-menu-indicator-size) translate-x-(--akar-navigation-menu-indicator-position) flex h-2.5 items-end justify-center overflow-hidden transition-[translate,width] duration-200',
     arrow: 'relative top-[50%] size-2.5 rotate-45 border border-default bg-default z-[1] rounded-xs',
   },
+  variants: {
+    color: {
+      neutral: {
+        link: 'focus-visible:before:ring-inverted',
+        childLink: 'focus-visible:before:ring-inverted',
+      },
+    },
+    highlightColor: {
+      neutral: '',
+    },
+    variant: {
+      pill: '',
+      link: '',
+    },
+    orientation: {
+      horizontal: {
+        root: 'items-center justify-between',
+        list: 'flex items-center',
+        item: 'py-2',
+        link: 'px-2.5 py-1.5 before:inset-x-px before:inset-y-0',
+        childList: 'grid p-2',
+        childLink: 'px-3 py-2 gap-2 before:inset-x-px before:inset-y-0',
+        childLinkLabel: 'font-medium',
+        content: 'absolute top-0 left-0 w-full max-h-[70vh] overflow-y-auto',
+      },
+      vertical: {
+        root: 'flex-col',
+        link: 'flex-row px-2.5 py-1.5 before:inset-y-px before:inset-x-0',
+        childLabel: 'px-1.5 py-0.5',
+        childLink: 'p-1.5 gap-1.5 before:inset-y-px before:inset-x-0',
+      },
+    },
+    contentOrientation: {
+      horizontal: {
+        viewportWrapper: 'justify-center',
+        content: 'data-[motion=from-start]:animate-[enter-from-left_200ms_ease] data-[motion=from-end]:animate-[enter-from-right_200ms_ease] data-[motion=to-start]:animate-[exit-to-left_200ms_ease] data-[motion=to-end]:animate-[exit-to-right_200ms_ease]',
+      },
+      vertical: {
+        viewport: 'sm:w-(--akar-navigation-menu-viewport-width) left-(--akar-navigation-menu-viewport-left)',
+      },
+    },
+    active: {
+      true: {
+        childLink: 'before:bg-elevated text-highlighted',
+        childLinkIcon: 'text-default',
+      },
+      false: {
+        link: 'text-muted',
+        linkLeadingIcon: 'text-dimmed',
+        childLink: 'transition-colors before:transition-colors hover:before:bg-elevated/50 text-default hover:text-highlighted',
+        childLinkIcon: 'text-dimmed group-hover:text-default transition-colors',
+      },
+    },
+    disabled: {
+      true: {
+        link: 'cursor-not-allowed opacity-75',
+      },
+    },
+    highlight: {
+      true: '',
+    },
+    level: {
+      true: '',
+    },
+    collapsed: {
+      true: '',
+    },
+  },
 });
 
 export type AuNavigationMenuUv = MandorComponentConfig<typeof navigationMenuUv>;
