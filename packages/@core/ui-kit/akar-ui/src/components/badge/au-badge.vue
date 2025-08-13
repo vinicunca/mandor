@@ -93,7 +93,7 @@ const mandorUv = computed(
     <slot name="leading">
       <AuIcon
         v-if="isLeading && leadingIconName"
-        :name="leadingIconName"
+        :icon="leadingIconName"
         :class="mandorUv.leadingIcon({ class: props.uv?.leadingIcon })"
       />
 
@@ -117,7 +117,7 @@ const mandorUv = computed(
     <slot name="trailing">
       <AuIcon
         v-if="isTrailing && trailingIconName"
-        :name="trailingIconName"
+        :icon="trailingIconName"
         :class="mandorUv.trailingIcon({ class: props.uv?.trailingIcon })"
       />
     </slot>

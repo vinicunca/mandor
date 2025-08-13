@@ -56,6 +56,7 @@ import { computed, toRef } from 'vue';
 
 import { defu } from '@mandor-core/shared/utils';
 
+import { isString } from '@vinicunca/perkakas';
 import { reactivePick } from '@vueuse/core';
 import {
   ATooltipArrow,
@@ -145,7 +146,7 @@ const mandorUv = computed(
               v-for="(kbd, index) in kbds"
               :key="index"
               :size="((props.uv?.kbdsSize || mandorUv.kbdsSize()) as AuKbdProps['size'])"
-              v-bind="typeof kbd === 'string' ? { value: kbd } : kbd"
+              v-bind="isString(kbd) ? { value: kbd } : kbd"
             />
           </span>
         </slot>
