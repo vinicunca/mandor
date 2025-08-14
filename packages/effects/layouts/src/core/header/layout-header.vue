@@ -108,11 +108,11 @@ function clearPreferencesAndLogout() {
   >
     <slot :name="slot.name">
       <template v-if="slot.name === 'refresh'">
-        <PButtonIcon
+        <!-- <PButtonIcon
           class="my-0 mr-1 rounded-md"
           icon="i-lucide:rotate-cw"
           @click="refresh"
-        />
+        /> -->
       </template>
     </slot>
   </template>
@@ -165,7 +165,7 @@ function clearPreferencesAndLogout() {
         </template>
 
         <template v-else-if="slot.name === 'fullscreen'">
-          <PFullScreen class="mr-1" />
+          <!-- <PFullScreen class="mr-1" /> -->
         </template>
       </slot>
     </template>

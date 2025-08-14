@@ -179,6 +179,7 @@ import { defu, isArrayOfArray } from '@mandor-core/shared/utils';
 
 import { isBoolean, isNumber, isString, prop } from '@vinicunca/perkakas';
 import { createReusableTemplate, reactivePick } from '@vueuse/core';
+// TODO: Use Accordion from base instead
 import {
   AAccordionContent,
   AAccordionItem,
@@ -309,17 +310,19 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
 
   return props.type === 'single' ? indexes[0] : indexes;
 }
+
+type KeyAuNavigationMenuSlot = keyof AuNavigationMenuSlots<T>;
 </script>
 
 <template>
   <DefineLinkTemplate v-slot="{ item, isActive, index }">
     <slot
-      :name="((item.slot || 'item') as keyof AuNavigationMenuSlots<T>)"
+      :name="((item.slot || 'item') as KeyAuNavigationMenuSlot)"
       :item="item"
       :index="index"
     >
       <slot
-        :name="((item.slot ? `${item.slot}-leading` : 'item-leading') as keyof AuNavigationMenuSlots<T>)"
+        :name="((item.slot ? `${item.slot}-leading` : 'item-leading') as KeyAuNavigationMenuSlot)"
         :item="item"
         :active="isActive"
         :index="index"
@@ -351,12 +354,12 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
       <span
         v-if="(!collapsed || orientation !== 'vertical')
           && (prop(item, props.labelKey)
-            || !!slots[(item.slot ? `${item.slot}-label` : 'item-label') as keyof AuNavigationMenuSlots<T>]
+            || !!slots[(item.slot ? `${item.slot}-label` : 'item-label') as KeyAuNavigationMenuSlot]
           )"
         :class="mandorUv.linkLabel({ class: [props.uv?.linkLabel, item.uv?.linkLabel] })"
       >
         <slot
-          :name="((item.slot ? `${item.slot}-label` : 'item-label') as keyof AuNavigationMenuSlots<T>)"
+          :name="((item.slot ? `${item.slot}-label` : 'item-label') as KeyAuNavigationMenuSlot)"
           :item="item"
           :active="isActive"
           :index="index"
@@ -375,8 +378,23 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
       </span>
 
       <component
-        :is="orientation === 'vertical' && item.children?.length && !collapsed ? AAccordionTrigger : 'span'"
-        v-if="(!collapsed || orientation !== 'vertical') && (item.badge || (orientation === 'horizontal' && (item.children?.length || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as keyof AuNavigationMenuSlots<T>])) || (orientation === 'vertical' && item.children?.length) || item.trailingIcon || !!slots[(item.slot ? `${item.slot}-trailing` : 'item-trailing') as keyof AuNavigationMenuSlots<T>])"
+        :is="orientation === 'vertical'
+          && item.children?.length
+          && !collapsed ? AAccordionTrigger : 'span'
+        "
+        v-if="(!collapsed || orientation !== 'vertical')
+          && (
+            item.badge || (
+              orientation === 'horizontal' && (
+                item.children?.length
+                || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as KeyAuNavigationMenuSlot]
+              )
+            )
+            || (orientation === 'vertical' && item.children?.length)
+            || item.trailingIcon
+            || !!slots[(item.slot ? `${item.slot}-trailing` : 'item-trailing') as KeyAuNavigationMenuSlot]
+          )
+        "
         as="span"
         :class="mandorUv.linkTrailing({
           class: [props.uv?.linkTrailing, item.uv?.linkTrailing],
@@ -384,7 +402,7 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
         @click.stop.prevent
       >
         <slot
-          :name="((item.slot ? `${item.slot}-trailing` : 'item-trailing') as keyof AuNavigationMenuSlots<T>)"
+          :name="((item.slot ? `${item.slot}-trailing` : 'item-trailing') as KeyAuNavigationMenuSlot)"
           :item="item"
           :active="isActive"
           :index="index"
@@ -401,8 +419,13 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
           />
 
           <AuIcon
-            v-if="(orientation === 'horizontal' && (item.children?.length || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as keyof AuNavigationMenuSlots<T>])) || (orientation === 'vertical' && item.children?.length)"
-            :icon="item.trailingIcon || trailingIcon"
+            v-if="(
+              orientation === 'horizontal'
+              && (item.children?.length
+                || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as KeyAuNavigationMenuSlot])
+            ) || (orientation === 'vertical' && item.children?.length
+            )"
+            :icon="item.trailingIcon || trailingIcon || 'i-lucide:chevron-down'"
             :class="mandorUv.linkTrailingIcon({
               class: [props.uv?.linkTrailingIcon, item.uv?.linkTrailingIcon],
               active: isActive,
@@ -441,18 +464,40 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
       <AuLink
         v-else-if="item.type !== 'label'"
         v-slot="{ active, ...slotProps }"
-        v-bind="(orientation === 'vertical' && item.children?.length && !collapsed && item.type === 'trigger') ? {} : pickLinkProps(item as Omit<AuNavigationMenuItem, 'type'>)"
+        v-bind="(
+          orientation === 'vertical'
+          && item.children?.length
+          && !collapsed && item.type === 'trigger'
+        ) ? {}
+          : pickLinkProps(item as Omit<AuNavigationMenuItem, 'type'>)
+        "
         custom
       >
         <component
-          :is="(orientation === 'horizontal' && (item.children?.length || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as keyof AuNavigationMenuSlots<T>])) ? ANavigationMenuTrigger : ((orientation === 'vertical' && item.children?.length && !collapsed && !(slotProps as any).href) ? AAccordionTrigger : ANavigationMenuLink)"
+          :is="(
+            orientation === 'horizontal'
+            && (
+              item.children?.length
+              || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as KeyAuNavigationMenuSlot])
+          )
+            ? ANavigationMenuTrigger : (
+              (
+                orientation === 'vertical'
+                && item.children?.length
+                && !collapsed
+                && !(slotProps as any).href
+              ) ? AAccordionTrigger : ANavigationMenuLink
+            )"
           as-child
           :active="active || item.active"
           :disabled="item.disabled"
           @select="item.onSelect"
         >
           <AuPopover
-            v-if="orientation === 'vertical' && collapsed && item.children?.length && (!!props.popover || !!item.popover)"
+            v-if="
+              orientation === 'vertical'
+                && collapsed
+                && item.children?.length && (!!props.popover || !!item.popover)"
             v-bind="{ ...popoverProps, ...(typeof item.popover === 'boolean' ? {} : item.popover || {}) }"
             :ui="{ content: mandorUv.content({ class: [props.uv?.content, item.uv?.content] }) }"
           >
@@ -469,7 +514,7 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
 
             <template #content>
               <slot
-                :name="((item.slot ? `${item.slot}-content` : 'item-content') as keyof AuNavigationMenuSlots<T>)"
+                :name="((item.slot ? `${item.slot}-content` : 'item-content') as KeyAuNavigationMenuSlot)"
                 :item="item"
                 :active="active || item.active"
                 :index="index"
@@ -578,12 +623,12 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
         </component>
 
         <ANavigationMenuContent
-          v-if="orientation === 'horizontal' && (item.children?.length || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as keyof AuNavigationMenuSlots<T>])"
+          v-if="orientation === 'horizontal' && (item.children?.length || !!slots[(item.slot ? `${item.slot}-content` : 'item-content') as KeyAuNavigationMenuSlot])"
           v-bind="contentProps"
           :class="mandorUv.content({ class: [props.uv?.content, item.uv?.content] })"
         >
           <slot
-            :name="((item.slot ? `${item.slot}-content` : 'item-content') as keyof AuNavigationMenuSlots<T>)"
+            :name="((item.slot ? `${item.slot}-content` : 'item-content') as KeyAuNavigationMenuSlot)"
             :item="item"
             :active="active || item.active"
             :index="index"
@@ -594,7 +639,7 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
                 :key="childIndex"
                 :class="mandorUv.childItem({ class: [props.uv?.childItem, item.uv?.childItem] })"
               >
-                <ULink
+                <AuLink
                   v-slot="{ active: childActive, ...childSlotProps }"
                   v-bind="pickLinkProps(childItem)"
                   custom
@@ -634,7 +679,7 @@ function getAccordionDefaultValue(list: Array<AuNavigationMenuItem>, level = 0) 
                       </div>
                     </AuLinkBase>
                   </ANavigationMenuLink>
-                </ULink>
+                </AuLink>
               </li>
             </ul>
           </slot>

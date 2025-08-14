@@ -4,14 +4,7 @@ import type { MenuRecordRaw } from '@mandor-core/typings';
 
 import { acceptHMRUpdate, defineStore } from 'pinia';
 
-export interface SupabaseSession {
-  access_token: string;
-  expires_at: number;
-  expires_in: number;
-  refresh_token: string;
-}
-
-interface StateAccess extends SupabaseSession {
+interface StateAccess {
   /**
    * Access codes
    */
@@ -46,18 +39,10 @@ export const useAccessStore = defineStore('core-access', {
     isAccessChecked: false,
     isLockScreen: false,
     lockScreenPassword: undefined,
-    access_token: '',
-    expires_at: 0,
-    expires_in: 0,
-    refresh_token: '',
   }),
 
   persist: {
     pick: [
-      'access_token',
-      'refresh_token',
-      'expires_at',
-      'expires_in',
       'accessCodes',
       'isLockScreen',
       'lockScreenPassword',
@@ -77,12 +62,6 @@ export const useAccessStore = defineStore('core-access', {
     },
     setAccessRoutes(routes: Array<RouteRecordRaw>) {
       this.accessRoutes = routes;
-    },
-    setSession(session: SupabaseSession) {
-      this.access_token = session.access_token;
-      this.expires_at = session.expires_at;
-      this.expires_in = session.expires_in;
-      this.refresh_token = session.refresh_token;
     },
     setIsAccessChecked(isAccessChecked: boolean) {
       this.isAccessChecked = isAccessChecked;

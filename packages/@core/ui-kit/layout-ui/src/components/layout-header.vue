@@ -67,7 +67,7 @@ const logoStyle = computed<CSSProperties>(() => {
   <header
     :class="theme"
     :style="style"
-    class="pl-2 border-b bg-header flex flex-[0_0_auto] w-full transition-margin-200 items-center top-0"
+    class="pl-2 border-b border-border bg-header flex flex-[0_0_auto] w-full transition-margin-200 items-center top-0"
   >
     <div
       v-if="slots.logo"

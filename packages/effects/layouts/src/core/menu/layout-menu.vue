@@ -1,43 +1,23 @@
-<script lang="ts">
-import type { ArrayOrNested } from '@mandor/typings';
-</script>
-
-<script setup lang="ts" generic="T extends ArrayOrNested<NavigationMenuItem>">
-import { computed } from 'vue';
-
-import { isArrayOfArray } from '@mandor/utils';
+<script setup lang="ts">
+import type { AuNavigationMenuItem } from '@mandor-core/akar-ui';
 
 import { AuNavigationMenu } from '@mandor-core/akar-ui';
 
 interface Props {
-
+  menus?: Array<AuNavigationMenuItem>;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  accordion: true,
-  menus: () => [],
-});
-
-const emits = defineEmits<{
-  open: [MenuItemPayload];
-  select: [{
-    key: string;
-    mode: MenuProps['mode'];
-  }];
-}>();
-
-function handleMenuSelect(item: MenuItemPayload) {
-  emits('select', {
-    key: item.path,
-    mode: props.mode,
-  });
-}
-
-function handleMenuOpen(item: MenuItemPayload) {
-  emits('open', item);
-}
+const props = withDefaults(
+  defineProps<Props>(),
+  {
+    menus: () => [],
+  },
+);
 </script>
 
 <template>
-  <AuNavigationMenu />
+  <AuNavigationMenu
+    orientation="vertical"
+    :items="menus"
+  />
 </template>

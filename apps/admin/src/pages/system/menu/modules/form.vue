@@ -22,7 +22,6 @@ import {
   updateMenu,
 } from '~~/api/system/menu';
 import { $t } from '~~/locales';
-import { componentKeys } from '~~/router/routes';
 
 import { getMenuTypeOptions } from '../data';
 

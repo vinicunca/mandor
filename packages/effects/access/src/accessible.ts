@@ -23,6 +23,7 @@ export async function generateAccessible(
   options.routes = clone(options.routes);
 
   const accessibleRoutes = await generateRoutes({ mode, options });
+  console.log('🚀 ~ generateAccessible ~ accessibleRoutes:', accessibleRoutes);
 
   const root = router.getRoutes().find((item) => item.path === '/');
 

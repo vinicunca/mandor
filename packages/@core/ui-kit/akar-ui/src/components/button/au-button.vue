@@ -38,9 +38,9 @@ export interface PButtonSlots {
 </script>
 
 <script lang="ts" setup>
-// import type { PAvatarProps } from '../avatar';
+import type { AuAvatarProps } from '../avatar';
 
-import { computed, inject, ref } from 'vue';
+import { computed, ref } from 'vue';
 
 import { omit } from '@vinicunca/perkakas';
 import { useForwardProps } from 'akar';
@@ -49,7 +49,7 @@ import { uv } from 'unocss-variants';
 import { useButtonGroup } from '../../composables/use-button-group';
 import { useComponentIcons } from '../../composables/use-component-icons';
 import { pickLinkProps } from '../../utils';
-// import PAvatar from '../avatar/p-avatar.vue';
+import { AuAvatar } from '../avatar';
 import AuIcon from '../icon/au-icon.vue';
 import { AuLink, AuLinkBase } from '../link';
 import { buttonUv } from './button.theme';
@@ -151,9 +151,9 @@ const pohonUv = computed(() =>
           :icon="leadingIconName"
           :class="pohonUv.leadingIcon({ class: props.pohon?.leadingIcon, active })"
         />
-        <PAvatar
+        <AuAvatar
           v-else-if="!!avatar"
-          :size="((props.pohon?.leadingAvatarSize || pohonUv.leadingAvatarSize()) as PAvatarProps['size'])"
+          :size="((props.pohon?.leadingAvatarSize || pohonUv.leadingAvatarSize()) as AuAvatarProps['size'])"
           v-bind="avatar"
           :class="pohonUv.leadingAvatar({ class: props.pohon?.leadingAvatar, active })"
         />

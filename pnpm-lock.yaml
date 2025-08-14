@@ -703,18 +703,6 @@ importers:
         specifier: 'catalog:'
         version: 3.5.18(typescript@5.9.2)
 
-  packages/@core/ui-kit/menu-ui:
-    dependencies:
-      '@mandor-core/akar-ui':
-        specifier: workspace:*
-        version: link:../akar-ui
-      '@vueuse/core':
-        specifier: 'catalog:'
-        version: 13.6.0(vue@3.5.18(typescript@5.9.2))
-      vue:
-        specifier: 'catalog:'
-        version: 3.5.18(typescript@5.9.2)
-
   packages/constants: {}
 
   packages/effects/access:
@@ -773,9 +761,6 @@ importers:
       '@mandor-core/layout-ui':
         specifier: workspace:*
         version: link:../../@core/ui-kit/layout-ui
-      '@mandor-core/menu-ui':
-        specifier: workspace:*
-        version: link:../../@core/ui-kit/menu-ui
       '@mandor/composables':
         specifier: workspace:*
         version: link:../composables

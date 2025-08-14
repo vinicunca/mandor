@@ -143,11 +143,11 @@ function wrapperMenus(
     ? mapTree({
         tree: menus,
         mapper: (item) => {
-          return { ...clone(item), name: $t(item.name) };
+          return { ...clone(item), label: $t(item.name) };
         },
       })
     : menus.map((item) => {
-        return { ...clone(item), name: $t(item.name) };
+        return { ...clone(item), label: $t(item.name) };
       });
 }
 
@@ -270,12 +270,12 @@ const headerSlots = computed(() => {
           v-if="!showHeaderNav && preferences.breadcrumb.enable"
           #breadcrumb
         >
-          <LayoutBreadcrumb
+          <!-- <LayoutBreadcrumb
             :hide-when-only-one="preferences.breadcrumb.hideOnlyOne"
             :show-home="preferences.breadcrumb.showHome"
             :show-icon="preferences.breadcrumb.showIcon"
             :type="preferences.breadcrumb.styleType"
-          />
+          /> -->
         </template>
 
         <template

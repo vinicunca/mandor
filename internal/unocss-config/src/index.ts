@@ -38,8 +38,45 @@ export const unoCssConfig = defineConfig({
           'display': 'inline-block',
           'vertical-align': 'middle',
         },
-        scale: 1.25,
         warn: true,
+      },
+      theme: {
+        extend: {
+          keyframes: {
+            'accordion-down': {
+              from: { height: 0 },
+              to: { height: 'var(--akar-accordion-content-height)' },
+            },
+            'accordion-up': {
+              from: { height: 'var(--akar-accordion-content-height)' },
+              to: { height: 0 },
+            },
+            'collapsible-down': {
+              from: { height: 0 },
+              to: { height: 'var(--akar-collapsible-content-height)' },
+            },
+            'collapsible-up': {
+              from: { height: 'var(--akar-collapsible-content-height)' },
+              to: { height: 0 },
+            },
+            'toast-collapsed-closed': {
+              from: { transform: 'var(--transform)' },
+              to: { transform: 'translateY(calc((var(--before) - var(--height)) * var(--gap))) scale(var(--scale))' },
+            },
+            'toast-closed': {
+              from: { transform: 'var(--transform)' },
+              to: { transform: 'translateY(calc((var(--offset) - var(--height)) * var(--translate-factor)));' },
+            },
+          },
+          animation: {
+            'accordion-down': 'accordion-down 0.2s ease-out',
+            'accordion-up': 'accordion-up 0.2s ease-out',
+            'collapsible-down': 'collapsible-down 0.2s ease-in-out',
+            'collapsible-up': 'collapsible-up 0.2s ease-in-out',
+            'toast-collapsed-closed': 'toast-collapsed-closed 200ms ease-in-out',
+            'toast-closed': 'toast-closed 200ms ease-in-out',
+          },
+        },
       },
     }),
 

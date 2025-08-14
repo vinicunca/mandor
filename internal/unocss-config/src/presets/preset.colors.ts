@@ -56,4 +56,9 @@ export const themeColors: Theme['colors'] = {
   },
 
   ring: 'hsl(var(--mandor-color-ring))',
+
+  primary: {
+    DEFAULT: 'hsl(var(--mandor-color-primary))',
+    foreground: 'hsl(var(--mandor-color-primary-foreground))',
+  },
 };

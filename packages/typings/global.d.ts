@@ -7,8 +7,6 @@ declare module 'vue-router' {
 }
 
 export interface ApplicationConfig {
-  supabaseUrl: string;
-  supabaseKey: string;
 }
 
 export interface MandorAdminAppConfigRaw {

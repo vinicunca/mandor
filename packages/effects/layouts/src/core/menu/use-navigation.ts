@@ -1,8 +1,8 @@
 import type { RouteRecordNormalized } from 'vue-router';
 
-import { isHttpUrl, openRouteInNewWindow, openWindow } from '@mandor/utils';
-
 import { useRouter } from 'vue-router';
+
+import { isHttpUrl, openRouteInNewWindow, openWindow } from '@mandor/utils';
 
 export function useNavigation() {
   const router = useRouter();

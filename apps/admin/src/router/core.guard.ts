@@ -124,8 +124,6 @@ function setupAccessGuard(router: Router) {
       redirectPath = to.fullPath;
     }
 
-    console.log('🚀 ~ setupAccessGuard ~ redirectPath:', redirectPath);
-
     return {
       ...router.resolve(decodeURIComponent(redirectPath)),
       replace: true,

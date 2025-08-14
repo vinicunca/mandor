@@ -293,7 +293,7 @@ function handleMouseleave() {
     </div>
 
     <AuScrollbar
-      class="pt-2 overflow-y-auto"
+      class="px-2 pt-2 overflow-y-auto"
       :style="contentStyle"
       shadow
       shadow-border
